@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1077954654924",
+    "firebase_url": "https://tumbler-5e863.firebaseio.com",
+    "project_id": "tumbler-5e863",
+    "storage_bucket": "tumbler-5e863.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077954654924:android:0086bbaee6804938674869",
+        "android_client_info": {
+          "package_name": "com.example.learning_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1077954654924-9uht48d0rgtlu8gti8crbb9bl92h61d1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTQ29eOGRIK4bdnstaoEzyY4nIDYggSGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1077954654924-9uht48d0rgtlu8gti8crbb9bl92h61d1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

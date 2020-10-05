@@ -1,0 +1,79 @@
+net
+{
+    node_size = (80 40);
+    HR_Groups_GroupColors = "";
+    HR_Groups_GroupNames = "";
+    HR_Groups_UserGroupsNo = "0";
+    HR_Color_Decision = "17";
+    HR_Color_Utility = "36";
+    HR_Color_ContinuosChance = "48";
+    HR_Color_DiscreteChance = "16";
+    HR_Monitor_InitSD = "2";
+    HR_Monitor_InitStates = "5";
+    HR_Monitor_OpenGraph = "0";
+    HR_Monitor_GraphPrecision = "100";
+    HR_Monitor_AutoUpdGraph = "0";
+    HR_Compile_ApproxEpsilon = "0.00001";
+    HR_Compile_Approximate = "0";
+    HR_Compile_Compress = "0";
+    HR_Compile_TriangMethod = "0";
+    HR_Propagate_AutoNormal = "1";
+    HR_Propagate_AutoSum = "1";
+    HR_Propagate_Auto = "0";
+    HR_Font_Italic = "0";
+    HR_Font_Weight = "400";
+    HR_Font_Size = "-12";
+    HR_Font_Name = "Arial";
+    HR_Grid_GridShow = "0";
+    HR_Grid_GridSnap = "1";
+    HR_Grid_Y = "10";
+    HR_Grid_X = "10";
+}
+
+node Alc2
+{
+    position = (10 0);
+    states = ("y" "n");
+}
+
+node Test2
+{
+    label = "Test";
+    position = (230 0);
+    states = ("y" "n");
+}
+
+node Test1
+{
+    label = "Test";
+    position = (220 70);
+    states = ("y" "n");
+}
+
+node Alc1
+{
+    position = (0 70);
+    states = ("y" "n");
+}
+
+potential (Alc2)
+{
+ data = ( 0.001 0.999 );
+}
+
+potential (Test2 | Alc2)
+{
+ data = (( 0.99 0.01 )	%  y
+	 ( 0.001 0.999 ));	%  n
+}
+
+potential (Test1 | Alc1)
+{
+ data = (( 0.99 0.01 )	%  y
+	 ( 0.001 0.999 ));	%  n
+}
+
+potential (Alc1)
+{
+ data = ( 0.2 0.8 );
+}

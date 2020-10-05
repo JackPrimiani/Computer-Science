@@ -1,0 +1,457 @@
+net
+{
+    node_size = (80 40);
+    HR_Grid_X = "10";
+    HR_Grid_Y = "10";
+    HR_Grid_GridSnap = "1";
+    HR_Grid_GridShow = "0";
+    HR_Font_Name = "Arial";
+    HR_Font_Size = "-12";
+    HR_Font_Weight = "400";
+    HR_Font_Italic = "0";
+    HR_Propagate_Auto = "0";
+    HR_Propagate_AutoSum = "1";
+    HR_Propagate_AutoNormal = "1";
+    HR_Compile_TriangMethod = "0";
+    HR_Compile_Compress = "0";
+    HR_Compile_Approximate = "0";
+    HR_Compile_ApproxEpsilon = "0.00001";
+    HR_Monitor_AutoUpdGraph = "0";
+    HR_Monitor_GraphPrecision = "100";
+    HR_Monitor_OpenGraph = "0";
+    HR_Monitor_InitStates = "5";
+    HR_Monitor_InitSD = "2";
+    HR_Color_DiscreteChance = "16";
+    HR_Color_ContinuosChance = "48";
+    HR_Color_Utility = "36";
+    HR_Color_Decision = "17";
+    HR_Groups_UserGroupsNo = "0";
+    HR_Groups_GroupNames = "";
+    HR_Groups_GroupColors = "";
+}
+
+node C32
+{
+    label = "B11";
+    position = (1590 -200);
+    states = ("y" "n");
+}
+
+node C31
+{
+    label = "A11";
+    position = (1590 -30);
+    states = ("y" "n");
+}
+
+node C1_9
+{
+    label = "A10";
+    position = (1420 -30);
+    states = ("y" "n");
+}
+
+node C2_9
+{
+    label = "B10";
+    position = (1420 -200);
+    states = ("y" "n");
+}
+
+node C3_9
+{
+    label = "Experts10";
+    position = (1350 -90);
+    states = ("ex1" "ex2");
+}
+
+node C1_8
+{
+    label = "A9";
+    position = (1270 -30);
+    states = ("y" "n");
+}
+
+node C2_8
+{
+    label = "B9";
+    position = (1270 -200);
+    states = ("y" "n");
+}
+
+node C3_8
+{
+    label = "Experts9";
+    position = (1200 -90);
+    states = ("ex1" "ex2");
+}
+
+node C1_7
+{
+    label = "A8";
+    position = (1130 -30);
+    states = ("y" "n");
+}
+
+node C2_7
+{
+    label = "B8";
+    position = (1130 -200);
+    states = ("y" "n");
+}
+
+node C3_7
+{
+    label = "Experts8";
+    position = (1060 -90);
+    states = ("ex1" "ex2");
+}
+
+node C1_6
+{
+    label = "A7";
+    position = (990 -30);
+    states = ("y" "n");
+}
+
+node C2_6
+{
+    label = "B7";
+    position = (990 -200);
+    states = ("y" "n");
+}
+
+node C3_6
+{
+    label = "Experts7";
+    position = (920 -90);
+    states = ("ex1" "ex2");
+}
+
+node C1_5
+{
+    label = "A6";
+    position = (860 -30);
+    states = ("y" "n");
+}
+
+node C2_5
+{
+    label = "B6";
+    position = (860 -200);
+    states = ("y" "n");
+}
+
+node C3_5
+{
+    label = "Experts6";
+    position = (790 -90);
+    states = ("ex1" "ex2");
+}
+
+node C1_4
+{
+    label = "A5";
+    position = (710 -30);
+    states = ("y" "n");
+}
+
+node C2_4
+{
+    label = "B5";
+    position = (710 -200);
+    states = ("y" "n");
+}
+
+node C3_4
+{
+    label = "Experts5";
+    position = (640 -90);
+    states = ("ex1" "ex2");
+}
+
+node C1_3
+{
+    label = "A4";
+    position = (580 -30);
+    states = ("y" "n");
+}
+
+node C2_3
+{
+    label = "B4";
+    position = (580 -200);
+    states = ("y" "n");
+}
+
+node C3_3
+{
+    label = "Experts4";
+    position = (510 -90);
+    states = ("ex1" "ex2");
+}
+
+node C1_2
+{
+    label = "A3";
+    position = (430 -30);
+    states = ("y" "n");
+}
+
+node C2_2
+{
+    label = "B3";
+    position = (430 -200);
+    states = ("y" "n");
+}
+
+node C3_2
+{
+    label = "Experts3";
+    position = (360 -90);
+    states = ("ex1" "ex2");
+}
+
+node C1_1
+{
+    label = "A2";
+    position = (270 -30);
+    states = ("y" "n");
+}
+
+node C2_1
+{
+    label = "B2";
+    position = (270 -200);
+    states = ("y" "n");
+}
+
+node C3_1
+{
+    label = "Experts2";
+    position = (200 -90);
+    states = ("ex1" "ex2");
+}
+
+node C3
+{
+    label = "Experts1";
+    position = (50 -90);
+    states = ("ex1" "ex2");
+}
+
+node C2
+{
+    label = "B1";
+    position = (120 -200);
+    states = ("y" "n");
+}
+
+node C1
+{
+    label = "A1";
+    position = (120 -20);
+    states = ("y" "n");
+}
+
+potential (C32 | C3_9 C31)
+{
+ data = ((( 0.9 0.1 )	%  ex1  y
+	  ( 0.4 0.6 ))	%  ex1  n
+	 (( 0.6 0.4 )	%  ex2  y
+	  ( 0.4 0.6 )));	%  ex2  n
+}
+
+potential (C31)
+{
+ data = ( 0.7 0.3 );
+}
+
+potential (C1_9)
+{
+ data = ( 0.7 0.3 );
+}
+
+potential (C2_9 | C3_9 C1_9)
+{
+ data = ((( 0.9 0.1 )	%  ex1  y
+	  ( 0.4 0.6 ))	%  ex1  n
+	 (( 0.6 0.4 )	%  ex2  y
+	  ( 0.4 0.6 )));	%  ex2  n
+}
+
+potential (C3_9 | C3_8)
+{
+ data = (( 1 0 )	%  ex1
+	 ( 0 1 ));	%  ex2
+}
+
+potential (C1_8)
+{
+ data = ( 0.7 0.3 );
+}
+
+potential (C2_8 | C3_8 C1_8)
+{
+ data = ((( 0.9 0.1 )	%  ex1  y
+	  ( 0.4 0.6 ))	%  ex1  n
+	 (( 0.6 0.4 )	%  ex2  y
+	  ( 0.4 0.6 )));	%  ex2  n
+}
+
+potential (C3_8 | C3_7)
+{
+ data = (( 1 0 )	%  ex1
+	 ( 0 1 ));	%  ex2
+}
+
+potential (C1_7)
+{
+ data = ( 0.7 0.3 );
+}
+
+potential (C2_7 | C3_7 C1_7)
+{
+ data = ((( 0.9 0.1 )	%  ex1  y
+	  ( 0.4 0.6 ))	%  ex1  n
+	 (( 0.6 0.4 )	%  ex2  y
+	  ( 0.4 0.6 )));	%  ex2  n
+}
+
+potential (C3_7 | C3_6)
+{
+ data = (( 1 0 )	%  ex1
+	 ( 0 1 ));	%  ex2
+}
+
+potential (C1_6)
+{
+ data = ( 0.7 0.3 );
+}
+
+potential (C2_6 | C3_6 C1_6)
+{
+ data = ((( 0.9 0.1 )	%  ex1  y
+	  ( 0.4 0.6 ))	%  ex1  n
+	 (( 0.6 0.4 )	%  ex2  y
+	  ( 0.4 0.6 )));	%  ex2  n
+}
+
+potential (C3_6 | C3_5)
+{
+ data = (( 1 0 )	%  ex1
+	 ( 0 1 ));	%  ex2
+}
+
+potential (C1_5)
+{
+ data = ( 0.7 0.3 );
+}
+
+potential (C2_5 | C3_5 C1_5)
+{
+ data = ((( 0.9 0.1 )	%  ex1  y
+	  ( 0.4 0.6 ))	%  ex1  n
+	 (( 0.6 0.4 )	%  ex2  y
+	  ( 0.4 0.6 )));	%  ex2  n
+}
+
+potential (C3_5 | C3_4)
+{
+ data = (( 1 0 )	%  ex1
+	 ( 0 1 ));	%  ex2
+}
+
+potential (C1_4)
+{
+ data = ( 0.7 0.3 );
+}
+
+potential (C2_4 | C3_4 C1_4)
+{
+ data = ((( 0.9 0.1 )	%  ex1  y
+	  ( 0.4 0.6 ))	%  ex1  n
+	 (( 0.6 0.4 )	%  ex2  y
+	  ( 0.4 0.6 )));	%  ex2  n
+}
+
+potential (C3_4 | C3_3)
+{
+ data = (( 1 0 )	%  ex1
+	 ( 0 1 ));	%  ex2
+}
+
+potential (C1_3)
+{
+ data = ( 0.7 0.3 );
+}
+
+potential (C2_3 | C3_3 C1_3)
+{
+ data = ((( 0.9 0.1 )	%  ex1  y
+	  ( 0.4 0.6 ))	%  ex1  n
+	 (( 0.6 0.4 )	%  ex2  y
+	  ( 0.4 0.6 )));	%  ex2  n
+}
+
+potential (C3_3 | C3_2)
+{
+ data = (( 1 0 )	%  ex1
+	 ( 0 1 ));	%  ex2
+}
+
+potential (C1_2)
+{
+ data = ( 0.7 0.3 );
+}
+
+potential (C2_2 | C3_2 C1_2)
+{
+ data = ((( 0.9 0.1 )	%  ex1  y
+	  ( 0.4 0.6 ))	%  ex1  n
+	 (( 0.6 0.4 )	%  ex2  y
+	  ( 0.4 0.6 )));	%  ex2  n
+}
+
+potential (C3_2 | C3_1)
+{
+ data = (( 1 0 )	%  ex1
+	 ( 0 1 ));	%  ex2
+}
+
+potential (C1_1)
+{
+ data = ( 0.7 0.3 );
+}
+
+potential (C2_1 | C3_1 C1_1)
+{
+ data = ((( 0.9 0.1 )	%  ex1  y
+	  ( 0.4 0.6 ))	%  ex1  n
+	 (( 0.6 0.4 )	%  ex2  y
+	  ( 0.4 0.6 )));	%  ex2  n
+}
+
+potential (C3_1 | C3)
+{
+ data = (( 1 0 )	%  ex1
+	 ( 0 1 ));	%  ex2
+}
+
+potential (C3)
+{
+ data = ( 0.5 0.5 );
+}
+
+potential (C2 | C3 C1)
+{
+ data = ((( 0.9 0.1 )	%  ex1  y
+	  ( 0.4 0.6 ))	%  ex1  n
+	 (( 0.6 0.4 )	%  ex2  y
+	  ( 0.4 0.6 )));	%  ex2  n
+}
+
+potential (C1)
+{
+ data = ( 0.7 0.3 );
+}

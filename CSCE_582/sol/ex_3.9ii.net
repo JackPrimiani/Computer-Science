@@ -1,0 +1,140 @@
+net
+{
+    node_size = (80 40);
+    HR_Grid_X = "10";
+    HR_Grid_Y = "10";
+    HR_Grid_GridSnap = "1";
+    HR_Grid_GridShow = "0";
+    HR_Font_Name = "Arial";
+    HR_Font_Size = "-12";
+    HR_Font_Weight = "400";
+    HR_Font_Italic = "0";
+    HR_Propagate_Auto = "0";
+    HR_Propagate_AutoSum = "1";
+    HR_Propagate_AutoNormal = "1";
+    HR_Compile_TriangMethod = "0";
+    HR_Compile_Compress = "0";
+    HR_Compile_Approximate = "0";
+    HR_Compile_ApproxEpsilon = "0.00001";
+    HR_Monitor_AutoUpdGraph = "0";
+    HR_Monitor_GraphPrecision = "100";
+    HR_Monitor_OpenGraph = "0";
+    HR_Monitor_InitStates = "5";
+    HR_Monitor_InitSD = "2";
+    HR_Color_DescreteChance = "16";
+    HR_Color_ContinuosChance = "48";
+    HR_Color_Utility = "36";
+    HR_Color_Decision = "17";
+    HR_Groups_UserGroupsNo = "0";
+    HR_Groups_GroupNames = "";
+    HR_Groups_GroupColors = "";
+    HRUNTIME_Monitor_InitStates = "5";
+    HRUNTIME_Monitor_OpenGraph = "0";
+    HRUNTIME_Monitor_GraphPrecision = "100";
+    HRUNTIME_Monitor_AutoUpdGraph = "0";
+    HRUNTIME_Compile_ApproxEpsilon = "0.00001";
+    HRUNTIME_Compile_Approximate = "0";
+    HRUNTIME_Compile_Compress = "0";
+    HRUNTIME_Compile_TriangMethod = "0";
+    HRUNTIME_Propagate_AutoNormal = "1";
+    HRUNTIME_Propagate_AutoSum = "1";
+    HRUNTIME_Propagate_Auto = "0";
+    HRUNTIME_Font_Italic = "0";
+    HRUNTIME_Font_Weight = "400";
+    HRUNTIME_Font_Size = "-12";
+    HRUNTIME_Font_Name = "Arial";
+    HRUNTIME_Grid_GridShow = "0";
+    HRUNTIME_Grid_GridSnap = "1";
+    HRUNTIME_Grid_Y = "10";
+    HRUNTIME_Grid_X = "10";
+    HR_Color_DiscreteChance = "16";
+}
+
+node Pr_1_1
+{
+    label = "Pr ";
+    position = (470 160);
+    states = ("yes" "no");
+}
+
+node BT_1_1
+{
+    label = "BT ";
+    position = (380 0);
+    states = ("yes" "no");
+}
+
+node UT_1_1
+{
+    label = "UT ";
+    position = (550 0);
+    states = ("yes" "no");
+}
+
+node UT_1
+{
+    label = "UT ";
+    position = (170 10);
+    states = ("yes" "no");
+}
+
+node BT_1
+{
+    label = "BT ";
+    position = (0 10);
+    states = ("yes" "no");
+}
+
+node Ho_1
+{
+    label = "Ho";
+    position = (90 80);
+    states = ("yes" "no");
+}
+
+node Pr_1
+{
+    label = "Pr";
+    position = (90 170);
+    states = ("yes" "no");
+}
+
+potential (Pr_1_1)
+{
+ data = ( 0.87 0.13 );
+}
+
+potential (BT_1_1 | Pr_1_1)
+{
+ data = (( 0.64 0.36 )	%  yes
+	 ( 0.106 0.894 ));	%  no
+}
+
+potential (UT_1_1 | Pr_1_1)
+{
+ data = (( 0.73 0.27 )	%  yes
+	 ( 0.107 0.893 ));	%  no
+}
+
+potential (UT_1 | Ho_1)
+{
+ data = (( 0.8 0.2 )	%  yes
+	 ( 0.1 0.9 ));	%  no
+}
+
+potential (BT_1 | Ho_1)
+{
+ data = (( 0.7 0.3 )	%  yes
+	 ( 0.1 0.9 ));	%  no
+}
+
+potential (Ho_1 | Pr_1)
+{
+ data = (( 0.9 0.1 )	%  yes
+	 ( 0.01 0.99 ));	%  no
+}
+
+potential (Pr_1)
+{
+ data = ( 0.87 0.13 );
+}

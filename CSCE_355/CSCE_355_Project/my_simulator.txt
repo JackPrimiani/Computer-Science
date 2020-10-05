@@ -1,0 +1,5 @@
+Build:
+  g++ my_simulateDFA.cpp
+  mv a.out simulateDFA
+Run:
+  ./simulateDFA <dfa file> <strings file>

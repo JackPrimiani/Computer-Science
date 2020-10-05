@@ -1,0 +1,348 @@
+class ex_3_7
+{
+    inputs = ();
+    outputs = ();
+    node_size = (80 40);
+    HR_OOBN_FitExpand = "1";
+    HR_Desc = "";
+    HR_Zoom_ZoomFactor = "100";
+    HR_Groups_GroupColors = "";
+    HR_Groups_GroupNames = "";
+    HR_Groups_UserGroupsNo = "0";
+    HR_Color_Interface = "21";
+    HR_Color_Instance = "0";
+    HR_Color_Utility = "36";
+    HR_Color_Decision = "17";
+    HR_Color_ContinuousChance = "48";
+    HR_Color_DiscreteChance = "16";
+    HR_Monitor_InitSD = "2";
+    HR_Monitor_InitStates = "5";
+    HR_Monitor_OpenGraph = "0";
+    HR_Monitor_GraphPrecision = "100";
+    HR_Monitor_AutoUpdGraph = "0";
+    HR_Compile_MaxMinimalSeparators = "250000";
+    HR_Compile_ApproxEpsilon = "1.0E-5";
+    HR_Compile_Approximate = "0";
+    HR_Compile_Compress = "0";
+    HR_Compile_TriangMethod = "0";
+    HR_Propagate_AutoNormal = "1";
+    HR_Propagate_AutoSum = "1";
+    HR_Propagate_Auto = "1";
+    HR_Font_Italic = "0";
+    HR_Font_Weight = "400";
+    HR_Font_Size = "-12";
+    HR_Font_Name = "Arial";
+    HR_Grid_GridShow = "0";
+    HR_Grid_GridSnap = "0";
+    HR_Grid_Y = "40";
+    HR_Grid_X = "40";
+
+    node A_9_1
+    {
+	label = "";
+	position = (1268 102);
+	states = ("yes" "no");
+    }
+
+    node B_9_1
+    {
+	label = "";
+	position = (1270 225);
+	states = ("yes" "no");
+    }
+
+    node B_9
+    {
+	label = "";
+	position = (1150 231);
+	states = ("yes" "no");
+    }
+
+    node A_9
+    {
+	label = "";
+	position = (1148 108);
+	states = ("yes" "no");
+    }
+
+    node B_8
+    {
+	label = "";
+	position = (1040 228);
+	states = ("yes" "no");
+    }
+
+    node A_8
+    {
+	label = "";
+	position = (1038 105);
+	states = ("yes" "no");
+    }
+
+    node B_7
+    {
+	label = "";
+	position = (924 227);
+	states = ("yes" "no");
+    }
+
+    node A_7
+    {
+	label = "";
+	position = (922 104);
+	states = ("yes" "no");
+    }
+
+    node B_6
+    {
+	label = "";
+	position = (815 226);
+	states = ("yes" "no");
+    }
+
+    node A_6
+    {
+	label = "";
+	position = (813 103);
+	states = ("yes" "no");
+    }
+
+    node B_5
+    {
+	label = "";
+	position = (692 223);
+	states = ("yes" "no");
+    }
+
+    node A_5
+    {
+	label = "";
+	position = (690 100);
+	states = ("yes" "no");
+    }
+
+    node B_4
+    {
+	label = "";
+	position = (582 221);
+	states = ("yes" "no");
+    }
+
+    node A_4
+    {
+	label = "";
+	position = (580 98);
+	states = ("yes" "no");
+    }
+
+    node B_3
+    {
+	label = "";
+	position = (476 221);
+	states = ("yes" "no");
+    }
+
+    node A_3
+    {
+	label = "";
+	position = (474 98);
+	states = ("yes" "no");
+    }
+
+    node B_2
+    {
+	label = "";
+	position = (362 219);
+	states = ("yes" "no");
+    }
+
+    node A_2
+    {
+	label = "";
+	position = (360 96);
+	states = ("yes" "no");
+    }
+
+    node B_1
+    {
+	label = "";
+	position = (250 221);
+	states = ("yes" "no");
+    }
+
+    node A_1
+    {
+	label = "";
+	position = (248 98);
+	states = ("yes" "no");
+    }
+
+    node B_0
+    {
+	label = "";
+	position = (149 221);
+	states = ("yes" "no");
+    }
+
+    node A_0
+    {
+	label = "";
+	position = (147 98);
+	states = ("yes" "no");
+    }
+
+    node Experts
+    {
+	label = "";
+	position = (657 437);
+	states = ("Expert 1" "Expert 2");
+    }
+
+    potential (A_9_1)
+    {
+	data = ( 0.7 0.3 );
+    }
+
+    potential (B_9_1 | Experts A_9_1)
+    {
+	data = ((( 0.9 0.1 )	%  Experts=Expert 1  A_9_1=yes
+		 ( 0.4 0.6 ))	%  Experts=Expert 1  A_9_1=no
+		(( 0.6 0.4 )	%  Experts=Expert 2  A_9_1=yes
+		 ( 0.4 0.6 )));	%  Experts=Expert 2  A_9_1=no
+    }
+
+    potential (B_9 | Experts A_9)
+    {
+	data = ((( 0.9 0.1 )	%  Experts=Expert 1  A_9=yes
+		 ( 0.4 0.6 ))	%  Experts=Expert 1  A_9=no
+		(( 0.6 0.4 )	%  Experts=Expert 2  A_9=yes
+		 ( 0.4 0.6 )));	%  Experts=Expert 2  A_9=no
+    }
+
+    potential (A_9)
+    {
+	data = ( 0.7 0.3 );
+    }
+
+    potential (B_8 | Experts A_8)
+    {
+	data = ((( 0.9 0.1 )	%  Experts=Expert 1  A_8=yes
+		 ( 0.4 0.6 ))	%  Experts=Expert 1  A_8=no
+		(( 0.6 0.4 )	%  Experts=Expert 2  A_8=yes
+		 ( 0.4 0.6 )));	%  Experts=Expert 2  A_8=no
+    }
+
+    potential (A_8)
+    {
+	data = ( 0.7 0.3 );
+    }
+
+    potential (B_7 | Experts A_7)
+    {
+	data = ((( 0.9 0.1 )	%  Experts=Expert 1  A_7=yes
+		 ( 0.4 0.6 ))	%  Experts=Expert 1  A_7=no
+		(( 0.6 0.4 )	%  Experts=Expert 2  A_7=yes
+		 ( 0.4 0.6 )));	%  Experts=Expert 2  A_7=no
+    }
+
+    potential (A_7)
+    {
+	data = ( 0.7 0.3 );
+    }
+
+    potential (B_6 | Experts A_6)
+    {
+	data = ((( 0.9 0.1 )	%  Experts=Expert 1  A_6=yes
+		 ( 0.4 0.6 ))	%  Experts=Expert 1  A_6=no
+		(( 0.6 0.4 )	%  Experts=Expert 2  A_6=yes
+		 ( 0.4 0.6 )));	%  Experts=Expert 2  A_6=no
+    }
+
+    potential (A_6)
+    {
+	data = ( 0.7 0.3 );
+    }
+
+    potential (B_5 | Experts A_5)
+    {
+	data = ((( 0.9 0.1 )	%  Experts=Expert 1  A_5=yes
+		 ( 0.4 0.6 ))	%  Experts=Expert 1  A_5=no
+		(( 0.6 0.4 )	%  Experts=Expert 2  A_5=yes
+		 ( 0.4 0.6 )));	%  Experts=Expert 2  A_5=no
+    }
+
+    potential (A_5)
+    {
+	data = ( 0.7 0.3 );
+    }
+
+    potential (B_4 | Experts A_4)
+    {
+	data = ((( 0.9 0.1 )	%  Experts=Expert 1  A_4=yes
+		 ( 0.4 0.6 ))	%  Experts=Expert 1  A_4=no
+		(( 0.6 0.4 )	%  Experts=Expert 2  A_4=yes
+		 ( 0.4 0.6 )));	%  Experts=Expert 2  A_4=no
+    }
+
+    potential (A_4)
+    {
+	data = ( 0.7 0.3 );
+    }
+
+    potential (B_3 | Experts A_3)
+    {
+	data = ((( 0.9 0.1 )	%  Experts=Expert 1  A_3=yes
+		 ( 0.4 0.6 ))	%  Experts=Expert 1  A_3=no
+		(( 0.6 0.4 )	%  Experts=Expert 2  A_3=yes
+		 ( 0.4 0.6 )));	%  Experts=Expert 2  A_3=no
+    }
+
+    potential (A_3)
+    {
+	data = ( 0.7 0.3 );
+    }
+
+    potential (B_2 | Experts A_2)
+    {
+	data = ((( 0.9 0.1 )	%  Experts=Expert 1  A_2=yes
+		 ( 0.4 0.6 ))	%  Experts=Expert 1  A_2=no
+		(( 0.6 0.4 )	%  Experts=Expert 2  A_2=yes
+		 ( 0.4 0.6 )));	%  Experts=Expert 2  A_2=no
+    }
+
+    potential (A_2)
+    {
+	data = ( 0.7 0.3 );
+    }
+
+    potential (B_1 | Experts A_1)
+    {
+	data = ((( 0.9 0.1 )	%  Experts=Expert 1  A_1=yes
+		 ( 0.4 0.6 ))	%  Experts=Expert 1  A_1=no
+		(( 0.6 0.4 )	%  Experts=Expert 2  A_1=yes
+		 ( 0.4 0.6 )));	%  Experts=Expert 2  A_1=no
+    }
+
+    potential (A_1)
+    {
+	data = ( 0.7 0.3 );
+    }
+
+    potential (B_0 | Experts A_0)
+    {
+	data = ((( 0.9 0.1 )	%  Experts=Expert 1  A_0=yes
+		 ( 0.4 0.6 ))	%  Experts=Expert 1  A_0=no
+		(( 0.6 0.4 )	%  Experts=Expert 2  A_0=yes
+		 ( 0.4 0.6 )));	%  Experts=Expert 2  A_0=no
+    }
+
+    potential (A_0)
+    {
+	data = ( 0.7 0.3 );
+    }
+
+    potential (Experts)
+    {
+	data = ( 0.5 0.5 );
+    }
+} % class ex_3_7

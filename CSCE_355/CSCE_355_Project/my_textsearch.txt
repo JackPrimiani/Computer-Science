@@ -1,0 +1,5 @@
+Build:
+  g++ my_textsearch.cpp
+  mv a.out textsearch
+Run:
+  ./textsearch <string file>

@@ -1,0 +1,359 @@
+net
+{
+    node_size = (80 40);
+    HR_Zoom_ZoomFactor = "100";
+    HR_Grid_X = "10";
+    HR_Grid_Y = "10";
+    HR_Grid_GridSnap = "1";
+    HR_Grid_GridShow = "0";
+    HR_Font_Name = "Arial";
+    HR_Font_Size = "-12";
+    HR_Font_Weight = "400";
+    HR_Font_Italic = "0";
+    HR_Propagate_Auto = "0";
+    HR_Propagate_AutoSum = "1";
+    HR_Propagate_AutoNormal = "1";
+    HR_Compile_TriangMethod = "0";
+    HR_Compile_Compress = "0";
+    HR_Compile_Approximate = "0";
+    HR_Compile_ApproxEpsilon = "0.00001";
+    HR_Monitor_AutoUpdGraph = "0";
+    HR_Monitor_GraphPrecision = "100";
+    HR_Monitor_OpenGraph = "0";
+    HR_Monitor_InitStates = "5";
+    HR_Monitor_InitSD = "2";
+    HR_Color_DiscreteChance = "16";
+    HR_Color_ContinuosChance = "48";
+    HR_Color_Utility = "36";
+    HR_Color_Decision = "17";
+    HR_Groups_UserGroupsNo = "0";
+    HR_Groups_GroupNames = "";
+    HR_Groups_GroupColors = "";
+}
+
+node C24
+{
+    position = (740 80);
+    states = ("" "State 1" "State 2");
+}
+
+node C23
+{
+    label = "As";
+    position = (680 190);
+    states = ("y" "n");
+}
+
+node C22
+{
+    label = "Ha";
+    position = (660 0);
+    states = ("");
+}
+
+node C21
+{
+    label = "Nu-Ha";
+    position = (470 0);
+    states = ("");
+}
+
+node C20
+{
+    label = "Nu-z";
+    position = (230 0);
+    states = ("");
+}
+
+node C19
+{
+    label = "Nu-y";
+    position = (380 80);
+    states = ("");
+}
+
+node C18
+{
+    label = "Nu-x";
+    position = (90 80);
+    states = ("");
+}
+
+node Bt
+{
+    position = (570 410);
+    states = ("y" "n");
+}
+
+node Fb
+{
+    position = (430 410);
+    states = ("y" "n");
+}
+
+node Ho
+{
+    position = (290 410);
+    states = ("y" "n");
+}
+
+node Fe
+{
+    position = (140 410);
+    states = ("y" "n");
+}
+
+node Ot
+{
+    position = (0 410);
+    states = ("y");
+}
+
+node C10
+{
+    label = "Ha-Bt";
+    position = (570 180);
+    states = ("0" "1" "2" "4");
+}
+
+node C9
+{
+    label = "Ha-Fb";
+    position = (430 180);
+    states = ("0" "1" "2" "4");
+}
+
+node C8
+{
+    label = "Nu-Ho";
+    position = (290 170);
+    states = ("0" "1" "2" "4");
+}
+
+node C7
+{
+    label = "Nu-Fe";
+    position = (140 170);
+    states = ("0" "1" "2" "4");
+}
+
+node C6
+{
+    label = "Nu-Ot";
+    position = (0 170);
+    states = ("0" "1" "2" "4");
+}
+
+node C5
+{
+    label = "Ha-Bt";
+    position = (570 320);
+    states = ("no" "mild" "mod" "sev");
+}
+
+node C4
+{
+    label = "Ha-Fb";
+    position = (430 320);
+    states = ("no" "mild" "mod" "sev");
+}
+
+node C3
+{
+    label = "Ha-Ho";
+    position = (290 320);
+    states = ("no" "mild" "mod" "sev");
+}
+
+node C2
+{
+    label = "Ha-Fe";
+    position = (140 320);
+    states = ("no" "mild" "mod" "sev");
+}
+
+node C1
+{
+    label = "Ha-Ot";
+    position = (0 320);
+    states = ("no" "mild" "mod" "sev");
+}
+
+potential (C24 | C22 C23)
+{
+    data
+     = ((( 1 1 1 )	%  C22=<0>  C23=y
+	 ( 1 1 1 )));	%  C22=<0>  C23=n
+}
+
+potential (C23)
+{
+    data = ( 1 1 );
+}
+
+potential (C22 | C21)
+{
+    data
+     = (( 1 ));	%  C21=<0>
+}
+
+potential (C21 | C10 C20)
+{
+    data
+     = ((( 1 ))	%  C10=0  C20=<0>
+	(( 1 ))	%  C10=1  C20=<0>
+	(( 1 ))	%  C10=2  C20=<0>
+	(( 1 )));	%  C10=4  C20=<0>
+}
+
+potential (C20 | C18 C19)
+{
+    data
+     = ((( 1 )));	%  C18=<0>  C19=<0>
+}
+
+potential (C19 | C9 C8)
+{
+    data
+     = ((( 1 )	%  C9=0  C8=0
+	 ( 1 )	%  C9=0  C8=1
+	 ( 1 )	%  C9=0  C8=2
+	 ( 1 ))	%  C9=0  C8=4
+	(( 1 )	%  C9=1  C8=0
+	 ( 1 )	%  C9=1  C8=1
+	 ( 1 )	%  C9=1  C8=2
+	 ( 1 ))	%  C9=1  C8=4
+	(( 1 )	%  C9=2  C8=0
+	 ( 1 )	%  C9=2  C8=1
+	 ( 1 )	%  C9=2  C8=2
+	 ( 1 ))	%  C9=2  C8=4
+	(( 1 )	%  C9=4  C8=0
+	 ( 1 )	%  C9=4  C8=1
+	 ( 1 )	%  C9=4  C8=2
+	 ( 1 )));	%  C9=4  C8=4
+}
+
+potential (C18 | C7 C6)
+{
+    data
+     = ((( 1 )	%  C7=0  C6=0
+	 ( 1 )	%  C7=0  C6=1
+	 ( 1 )	%  C7=0  C6=2
+	 ( 1 ))	%  C7=0  C6=4
+	(( 1 )	%  C7=1  C6=0
+	 ( 1 )	%  C7=1  C6=1
+	 ( 1 )	%  C7=1  C6=2
+	 ( 1 ))	%  C7=1  C6=4
+	(( 1 )	%  C7=2  C6=0
+	 ( 1 )	%  C7=2  C6=1
+	 ( 1 )	%  C7=2  C6=2
+	 ( 1 ))	%  C7=2  C6=4
+	(( 1 )	%  C7=4  C6=0
+	 ( 1 )	%  C7=4  C6=1
+	 ( 1 )	%  C7=4  C6=2
+	 ( 1 )));	%  C7=4  C6=4
+}
+
+potential (Bt)
+{
+    data = ( 1 1 );
+}
+
+potential (Fb)
+{
+    data = ( 1 1 );
+}
+
+potential (Ho)
+{
+    data = ( 1 1 );
+}
+
+potential (Fe)
+{
+    data = ( 1 1 );
+}
+
+potential (Ot)
+{
+    data = ( 1 );
+}
+
+potential (C10 | C5)
+{
+    data
+     = (( 1 1 1 1 )	%  C5=no
+	( 1 1 1 1 )	%  C5=mild
+	( 1 1 1 1 )	%  C5=mod
+	( 1 1 1 1 ));	%  C5=sev
+}
+
+potential (C9 | C4)
+{
+    data
+     = (( 1 1 1 1 )	%  C4=no
+	( 1 1 1 1 )	%  C4=mild
+	( 1 1 1 1 )	%  C4=mod
+	( 1 1 1 1 ));	%  C4=sev
+}
+
+potential (C8 | C3)
+{
+    data
+     = (( 1 1 1 1 )	%  C3=no
+	( 1 1 1 1 )	%  C3=mild
+	( 1 1 1 1 )	%  C3=mod
+	( 1 1 1 1 ));	%  C3=sev
+}
+
+potential (C7 | C2)
+{
+    data
+     = (( 1 1 1 1 )	%  C2=no
+	( 1 1 1 1 )	%  C2=mild
+	( 1 1 1 1 )	%  C2=mod
+	( 1 1 1 1 ));	%  C2=sev
+}
+
+potential (C6 | C1)
+{
+    data
+     = (( 1 0 0 0 )	%  C1=no
+	( 0 1 0 0 )	%  C1=mild
+	( 0 0 1 0 )	%  C1=mod
+	( 0 0 0 1 ));	%  C1=sev
+}
+
+potential (C5 | Bt)
+{
+    data
+     = (( 1 1 1 1 )	%  Bt=y
+	( 1 1 1 1 ));	%  Bt=n
+}
+
+potential (C4 | Fb)
+{
+    data
+     = (( 1 1 1 1 )	%  Fb=y
+	( 1 1 1 1 ));	%  Fb=n
+}
+
+potential (C3 | Ho)
+{
+    data
+     = (( 1 1 1 1 )	%  Ho=y
+	( 1 1 1 1 ));	%  Ho=n
+}
+
+potential (C2 | Fe)
+{
+    data
+     = (( 1 8 1 0 )	%  Fe=y
+	( 1 0 0 0 ));	%  Fe=n
+}
+
+potential (C1 | Ot)
+{
+    data
+     = (( 93 4 2 1 ));	%  Ot=y
+}

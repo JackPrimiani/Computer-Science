@@ -1,0 +1,121 @@
+\documentclass[fleqn]{article}
+\usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
+\usepackage{mathexam}
+
+\ExamClass{CSCE 240}
+\ExamName{Homework 2}
+\ExamHead{Due: Monday, 24 Sept 2018}
+
+\let
+\ds
+\displaystyle
+
+\begin{document}
+\ExamInstrBox {
+  You shall submit a zipped, \textbf{and only zipped}, archive of your homework
+  directory, hw2. The directory shall contain, at a minimum, the files
+  \texttt{.h} and \texttt{.cc}.
+
+  I will use my own makefile to make your \texttt{.cc} file.
+}
+%
+I found a really great computational geometry library that stores circles and
+squares in a very particular way--by keeping up with the points representing
+each object. \\
+\\
+I require additional functionality for a project and am tasking you with the
+development of the library.  \\
+\\
+%
+I have included a couple tests demonstrating the interfaces. You should
+definitely extend these tests. I will. You will also find a comp\_geo header and
+source file. I provide those as an interface specification. \textbf{YOU} are
+responsible for files you edit.\\
+\\
+%
+The functions should perform as follows:
+\begin{itemize}
+  \item \texttt{GetCircumference}($x_c$: double, $y_c$: double, $x_e$: double,
+    $y_e$: double): double
+    \begin{itemize}
+      \item parameters:
+        \begin{itemize}
+          \item $x_{c}$: double, x-value of circle's center,
+          \item $y_{c}$: double, y-value of circle's center,
+          \item $x_{e}$: double, x-value of point on circle's edge, and
+          \item $y_{e}$: double, y-value of point on circle's edge
+        \end{itemize}
+
+    \item \textbf{returns}: the floating point value representing the
+      circumference of a circle centered at $(x_c, y_c)$ with a second point on
+      the edge $(x_e, y_e)$.
+  \end{itemize}
+
+  \item \texttt{GetVolume}($x_c$: double, $y_c$: double, $x_e$: double,
+    $y_e$: double): double
+  \begin{itemize}
+    \item parameters:
+      \begin{itemize}
+          \item $x_{c}$: double, x-value of circle's center,
+          \item $y_{c}$: double, y-value of circle's center,
+          \item $x_{e}$: double, x-value of point on circle's edge, and
+          \item $y_{e}$: double, y-value of point on circle's edge
+      \end{itemize}
+    \item \textbf{returns}: the floating point value representing the volume of
+      the circle centered at $(x_c, y_c)$ with a second point on the edge $(x_e,
+      y_e)$.
+
+  \end{itemize}
+
+  \item \texttt{GetPerimeter}($x_{ll}$: double, $y_{ll}$: double, $x_{ur}$:
+      double, $y_{ur}$: double): double
+    \begin{itemize}
+      \item parameters:
+      \begin{itemize}
+        \item $x_{ll}$: double, x-value of lower-left point of rectangle,
+        \item $y_{ll}$: double, y-value of lower-left point of rectangle,
+        \item $x_{ur}$: double, x-value of upper-right point of rectangle, and
+        \item $y_{ur}$: double, y-value of upper-right point of rectangle
+      \end{itemize}
+      \item \textbf{returns}: the floating point value representing the
+        perimeter of the rectangle 
+    \end{itemize}
+    \newpage
+
+  \item \texttt{GetDistanceSquared}($x_1$: double, $y_1$: double, $x_2$: double,
+      $y_2$: double): double
+    \begin{itemize}
+      \item parameters:
+      \begin{itemize}
+        \item $x_1$: double, x-value of point 1,
+        \item $y_1$: double, y-value of point 1,
+        \item $x_2$: double, x-value of point 2, and
+        \item $y_2$: double, y-value of point 2
+      \end{itemize}
+      \item \textbf{returns}: the floating point value representing the
+        squared distance between points 1 and 2.
+    \end{itemize}
+
+  \item \texttt{GetDistance}($x_1$: double, $y_1$: double, $x_2$: double,
+      $y_2$: double): double
+    \begin{itemize}
+      \item parameters:
+      \begin{itemize}
+        \item $x_1$: double, x-value of point 1,
+        \item $y_1$: double, y-value of point 1,
+        \item $x_2$: double, x-value of point 2, and
+        \item $y_2$: double, y-value of point 2
+      \end{itemize}
+    \item \textbf{returns}: the floating point value representing the
+      distance between points 1 and 2.
+  \end{itemize}
+\end{itemize}
+\vspace{1.0em}
+%
+Late assignments will lose 25\% per day late, with no assignment begin accepted
+after 4 days (100\% reduction in points).\\
+\\
+%
+Check your syllabus for the breakdown of grading.
+\end{document}
+

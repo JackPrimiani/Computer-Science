@@ -1,0 +1,253 @@
+net
+{
+    node_size = (80 40);
+    HR_Groups_GroupColors = "";
+    HR_Groups_GroupNames = "";
+    HR_Groups_UserGroupsNo = "0";
+    HR_Color_Decision = "17";
+    HR_Color_Utility = "36";
+    HR_Color_ContinuosChance = "48";
+    HR_Color_DiscreteChance = "16";
+    HR_Monitor_InitSD = "2";
+    HR_Monitor_InitStates = "5";
+    HR_Monitor_OpenGraph = "0";
+    HR_Monitor_GraphPrecision = "100";
+    HR_Monitor_AutoUpdGraph = "0";
+    HR_Compile_ApproxEpsilon = "0.00001";
+    HR_Compile_Approximate = "0";
+    HR_Compile_Compress = "0";
+    HR_Compile_TriangMethod = "0";
+    HR_Propagate_AutoNormal = "1";
+    HR_Propagate_AutoSum = "1";
+    HR_Propagate_Auto = "0";
+    HR_Font_Italic = "0";
+    HR_Font_Weight = "400";
+    HR_Font_Size = "-12";
+    HR_Font_Name = "Arial";
+    HR_Grid_GridShow = "0";
+    HR_Grid_GridSnap = "1";
+    HR_Grid_Y = "10";
+    HR_Grid_X = "10";
+}
+
+node Cons4
+{
+    position = (680 0);
+    states = ("true" "false");
+}
+
+node Cons3
+{
+    position = (460 0);
+    states = ("true" "false");
+}
+
+node Cons2
+{
+    position = (240 10);
+    states = ("true" "false");
+}
+
+node Cons1
+{
+    position = (40 20);
+    states = ("true" "false");
+}
+
+node C4
+{
+    position = (720 90);
+    states = ("c1" "c2");
+}
+
+node P4
+{
+    position = (610 90);
+    states = ("p1" "p2");
+}
+
+node C3
+{
+    position = (510 90);
+    states = ("c1" "c2");
+}
+
+node P3
+{
+    position = (400 90);
+    states = ("p1" "p2");
+}
+
+node C2
+{
+    position = (300 90);
+    states = ("c1" "c2");
+}
+
+node P2
+{
+    position = (190 90);
+    states = ("p1" "p2");
+}
+
+node C1
+{
+    position = (100 90);
+    states = ("c1" "c2");
+}
+
+node P1
+{
+    position = (0 90);
+    states = ("p1" "p2");
+}
+
+node S4
+{
+    position = (620 160);
+    states = ("t1" "t2");
+}
+
+node S3
+{
+    position = (410 160);
+    states = ("t1" "t2");
+}
+
+node S2
+{
+    position = (240 160);
+    states = ("t1" "t2");
+}
+
+node S1
+{
+    position = (80 170);
+    states = ("t1" "t2");
+}
+
+node Constraint
+{
+    position = (330 270);
+    states = ("true" "false");
+}
+
+potential (Cons4 | C4 P4)
+{
+ data = ((( 1 0 )	%  c1  p1
+	  ( 0 1 ))	%  c1  p2
+	 (( 0 1 )	%  c2  p1
+	  ( 1 0 )));	%  c2  p2
+}
+
+potential (Cons3 | C3 P3)
+{
+ data = ((( 1 0 )	%  c1  p1
+	  ( 0 1 ))	%  c1  p2
+	 (( 0 1 )	%  c2  p1
+	  ( 1 0 )));	%  c2  p2
+}
+
+potential (Cons2 | C2 P2)
+{
+ data = ((( 1 0 )	%  c1  p1
+	  ( 0 1 ))	%  c1  p2
+	 (( 0 1 )	%  c2  p1
+	  ( 1 0 )));	%  c2  p2
+}
+
+potential (Cons1 | C1 P1)
+{
+ data = ((( 1 0 )	%  c1  p1
+	  ( 0 1 ))	%  c1  p2
+	 (( 0 1 )	%  c2  p1
+	  ( 1 0 )));	%  c2  p2
+}
+
+potential (C4 | S4)
+{
+ data = (( 0.8 0.2 )	%  t1
+	 ( 0.2 0.8 ));	%  t2
+}
+
+potential (P4 | S4)
+{
+ data = (( 0.8 0.2 )	%  t1
+	 ( 0.2 0.8 ));	%  t2
+}
+
+potential (C3 | S3)
+{
+ data = (( 0.8 0.2 )	%  t1
+	 ( 0.2 0.8 ));	%  t2
+}
+
+potential (P3 | S3)
+{
+ data = (( 0.8 0.2 )	%  t1
+	 ( 0.2 0.8 ));	%  t2
+}
+
+potential (C2 | S2)
+{
+ data = (( 0.8 0.2 )	%  t1
+	 ( 0.2 0.8 ));	%  t2
+}
+
+potential (P2 | S2)
+{
+ data = (( 0.8 0.2 )	%  t1
+	 ( 0.2 0.8 ));	%  t2
+}
+
+potential (C1 | S1)
+{
+ data = (( 0.8 0.2 )	%  t1
+	 ( 0.2 0.8 ));	%  t2
+}
+
+potential (P1 | S1)
+{
+ data = (( 0.8 0.2 )	%  t1
+	 ( 0.2 0.8 ));	%  t2
+}
+
+potential (S4)
+{
+ data = ( 0.5 0.5 );
+}
+
+potential (S3)
+{
+ data = ( 0.5 0.5 );
+}
+
+potential (S2)
+{
+ data = ( 0.5 0.5 );
+}
+
+potential (S1)
+{
+ data = ( 0.5 0.5 );
+}
+
+potential (Constraint | S4 S3 S2 S1)
+{
+ data = ((((( 0 1 )	%  t1  t1  t1  t1
+	    ( 0 1 ))	%  t1  t1  t1  t2
+	   (( 0 1 )	%  t1  t1  t2  t1
+	    ( 1 0 )))	%  t1  t1  t2  t2
+	  ((( 0 1 )	%  t1  t2  t1  t1
+	    ( 1 0 ))	%  t1  t2  t1  t2
+	   (( 1 0 )	%  t1  t2  t2  t1
+	    ( 0 1 ))))	%  t1  t2  t2  t2
+	 (((( 0 1 )	%  t2  t1  t1  t1
+	    ( 1 0 ))	%  t2  t1  t1  t2
+	   (( 1 0 )	%  t2  t1  t2  t1
+	    ( 0 1 )))	%  t2  t1  t2  t2
+	  ((( 1 0 )	%  t2  t2  t1  t1
+	    ( 0 1 ))	%  t2  t2  t1  t2
+	   (( 0 1 )	%  t2  t2  t2  t1
+	    ( 0 1 )))));	%  t2  t2  t2  t2
+}

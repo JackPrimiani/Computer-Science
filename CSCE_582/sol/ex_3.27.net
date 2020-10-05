@@ -1,0 +1,195 @@
+net
+{
+    node_size = (100 40);
+    HRUNTIME_Grid_X = "10";
+    HRUNTIME_Grid_Y = "10";
+    HRUNTIME_Grid_GridSnap = "1";
+    HRUNTIME_Grid_GridShow = "0";
+    HRUNTIME_Font_Name = "Arial";
+    HRUNTIME_Font_Size = "-12";
+    HRUNTIME_Font_Weight = "400";
+    HRUNTIME_Font_Italic = "0";
+    HRUNTIME_Propagate_Auto = "0";
+    HRUNTIME_Propagate_AutoSum = "1";
+    HRUNTIME_Propagate_AutoNormal = "1";
+    HRUNTIME_Compile_TriangMethod = "0";
+    HRUNTIME_Compile_Compress = "0";
+    HRUNTIME_Compile_Approximate = "0";
+    HRUNTIME_Compile_ApproxEpsilon = "0.00001";
+    HRUNTIME_Monitor_AutoUpdGraph = "0";
+    HRUNTIME_Monitor_GraphPrecision = "100";
+    HRUNTIME_Monitor_OpenGraph = "0";
+    HRUNTIME_Monitor_InitStates = "5";
+}
+
+node B
+{
+    label = "";
+    position = (160 150);
+    states = ("y" "n");
+}
+
+node Conj1
+{
+    label = "";
+    position = (60 0);
+    states = ("y" "n");
+}
+
+node C
+{
+    label = "";
+    position = (320 150);
+    states = ("y" "n");
+}
+
+node E
+{
+    label = "";
+    position = (590 150);
+    states = ("y" "n");
+}
+
+node Conj2
+{
+    label = "";
+    position = (230 0);
+    states = ("y" "n");
+}
+
+node A
+{
+    label = "";
+    position = (0 160);
+    states = ("y" "n");
+}
+
+node D
+{
+    label = "";
+    position = (460 150);
+    states = ("y" "n");
+}
+
+node F
+{
+    label = "";
+    position = (730 160);
+    states = ("y" "n");
+}
+
+node Conj3
+{
+    label = "";
+    position = (420 0);
+    states = ("y" "n");
+}
+
+node Result
+{
+    label = "";
+    position = (590 0);
+    states = ("y" "n");
+}
+
+potential (B |)
+{
+ data = ( 0.5 0.5 );
+}
+
+potential (Conj1 | A B C)
+{
+ data = (((( 1 0 )	%  y  y  y
+	   ( 1 0 ))	%  y  y  n
+	  (( 1 0 )	%  y  n  y
+	   ( 1 0 )))	%  y  n  n
+	 ((( 1 0 )	%  n  y  y
+	   ( 0 1 ))	%  n  y  n
+	  (( 0 1 )	%  n  n  y
+	   ( 1 0 ))));	%  n  n  n
+}
+
+potential (C |)
+{
+ data = ( 0.5 0.5 );
+}
+
+potential (E |)
+{
+ data = ( 0.5 0.5 );
+}
+
+potential (Conj2 | B C D Conj1)
+{
+ data = ((((( 1 0 )	%  y  y  y  y
+	    ( 0 1 ))	%  y  y  y  n
+	   (( 0 1 )	%  y  y  n  y
+	    ( 0 1 )))	%  y  y  n  n
+	  ((( 1 0 )	%  y  n  y  y
+	    ( 0 1 ))	%  y  n  y  n
+	   (( 1 0 )	%  y  n  n  y
+	    ( 0 1 ))))	%  y  n  n  n
+	 (((( 1 0 )	%  n  y  y  y
+	    ( 0 1 ))	%  n  y  y  n
+	   (( 1 0 )	%  n  y  n  y
+	    ( 0 1 )))	%  n  y  n  n
+	  ((( 0 1 )	%  n  n  y  y
+	    ( 0 1 ))	%  n  n  y  n
+	   (( 1 0 )	%  n  n  n  y
+	    ( 0 1 )))));	%  n  n  n  n
+}
+
+potential (A |)
+{
+ data = ( 0.5 0.5 );
+}
+
+potential (D |)
+{
+ data = ( 0.5 0.5 );
+}
+
+potential (F |)
+{
+ data = ( 0.5 0.5 );
+}
+
+potential (Conj3 | C E F Conj2)
+{
+ data = ((((( 1 0 )	%  y  y  y  y
+	    ( 0 1 ))	%  y  y  y  n
+	   (( 1 0 )	%  y  y  n  y
+	    ( 0 1 )))	%  y  y  n  n
+	  ((( 0 1 )	%  y  n  y  y
+	    ( 0 1 ))	%  y  n  y  n
+	   (( 1 0 )	%  y  n  n  y
+	    ( 0 1 ))))	%  y  n  n  n
+	 (((( 0 1 )	%  n  y  y  y
+	    ( 0 1 ))	%  n  y  y  n
+	   (( 1 0 )	%  n  y  n  y
+	    ( 0 1 )))	%  n  y  n  n
+	  ((( 1 0 )	%  n  n  y  y
+	    ( 0 1 ))	%  n  n  y  n
+	   (( 1 0 )	%  n  n  n  y
+	    ( 0 1 )))));	%  n  n  n  n
+}
+
+potential (Result | A D F Conj3)
+{
+ data = ((((( 1 0 )	%  y  y  y  y
+	    ( 0 1 ))	%  y  y  y  n
+	   (( 1 0 )	%  y  y  n  y
+	    ( 0 1 )))	%  y  y  n  n
+	  ((( 1 0 )	%  y  n  y  y
+	    ( 0 1 ))	%  y  n  y  n
+	   (( 0 1 )	%  y  n  n  y
+	    ( 0 1 ))))	%  y  n  n  n
+	 (((( 1 0 )	%  n  y  y  y
+	    ( 0 1 ))	%  n  y  y  n
+	   (( 0 1 )	%  n  y  n  y
+	    ( 0 1 )))	%  n  y  n  n
+	  ((( 1 0 )	%  n  n  y  y
+	    ( 0 1 ))	%  n  n  y  n
+	   (( 1 0 )	%  n  n  n  y
+	    ( 0 1 )))));	%  n  n  n  n
+}

@@ -1,0 +1,97 @@
+net
+{
+    node_size = (80 40);
+    HR_Grid_X = "10";
+    HR_Grid_Y = "10";
+    HR_Grid_GridSnap = "1";
+    HR_Grid_GridShow = "0";
+    HR_Font_Name = "Arial";
+    HR_Font_Size = "-12";
+    HR_Font_Weight = "400";
+    HR_Font_Italic = "0";
+    HR_Propagate_Auto = "0";
+    HR_Propagate_AutoSum = "1";
+    HR_Propagate_AutoNormal = "1";
+    HR_Compile_TriangMethod = "0";
+    HR_Compile_Compress = "0";
+    HR_Compile_Approximate = "0";
+    HR_Compile_ApproxEpsilon = "0.00001";
+    HR_Monitor_AutoUpdGraph = "0";
+    HR_Monitor_GraphPrecision = "100";
+    HR_Monitor_OpenGraph = "0";
+    HR_Monitor_InitStates = "5";
+    HR_Monitor_InitSD = "2";
+    HR_Color_DiscreteChance = "16";
+    HR_Color_ContinuosChance = "48";
+    HR_Color_Utility = "36";
+    HR_Color_Decision = "17";
+    HR_Groups_UserGroupsNo = "0";
+    HR_Groups_GroupNames = "";
+    HR_Groups_GroupColors = "";
+    HRUNTIME_Grid_X = "10";
+    HRUNTIME_Grid_Y = "10";
+    HRUNTIME_Grid_GridSnap = "1";
+    HRUNTIME_Grid_GridShow = "0";
+    HRUNTIME_Font_Name = "Arial";
+    HRUNTIME_Font_Size = "-12";
+    HRUNTIME_Font_Weight = "400";
+    HRUNTIME_Font_Italic = "0";
+    HRUNTIME_Propagate_Auto = "0";
+    HRUNTIME_Propagate_AutoSum = "1";
+    HRUNTIME_Propagate_AutoNormal = "1";
+    HRUNTIME_Compile_TriangMethod = "0";
+    HRUNTIME_Compile_Compress = "0";
+    HRUNTIME_Compile_Approximate = "0";
+    HRUNTIME_Compile_ApproxEpsilon = "0.00001";
+    HRUNTIME_Monitor_AutoUpdGraph = "0";
+    HRUNTIME_Monitor_GraphPrecision = "100";
+    HRUNTIME_Monitor_OpenGraph = "0";
+    HRUNTIME_Monitor_InitStates = "5";
+}
+
+utility Utility
+{
+    position = (320 130);
+}
+
+decision Drill
+{
+    position = (320 0);
+    states = ("drill" "not-drill");
+}
+
+node T
+{
+    position = (0 80);
+    states = ("c" "o" "n");
+}
+
+node S
+{
+    position = (150 130);
+    states = ("dr" "wt" "sk");
+}
+
+potential (Utility | Drill S)
+{
+ data = (( -70	%  drill  dr
+	   50	%  drill  wt
+	   200 )	%  drill  sk
+	 ( 0	%  not-drill  dr
+	   0	%  not-drill  wt
+	   0 ));	%  not-drill  sk
+}
+
+potential (Drill) {}
+
+potential (T | S)
+{
+ data = (( 0.1 0.3 0.6 )	%  dr
+	 ( 0.3 0.4 0.3 )	%  wt
+	 ( 0.5 0.4 0.1 ));	%  sk
+}
+
+potential (S)
+{
+ data = ( 0.5 0.3 0.2 );
+}

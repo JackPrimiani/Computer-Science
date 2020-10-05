@@ -1,0 +1,4 @@
+#Mon Dec 02 15:16:38 EST 2019
+base.0=C\:\\Users\\JackPrimiani\\CompSci\\CSCE_490\\Tumbler\\Learning_flutter\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

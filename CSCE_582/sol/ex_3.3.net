@@ -1,0 +1,636 @@
+net
+{
+    node_size = (80 40);
+    HR_Zoom_ZoomFactor = "100";
+    HR_Grid_X = "10";
+    HR_Grid_Y = "10";
+    HR_Grid_GridSnap = "1";
+    HR_Grid_GridShow = "0";
+    HR_Font_Name = "Arial";
+    HR_Font_Size = "-12";
+    HR_Font_Weight = "400";
+    HR_Font_Italic = "0";
+    HR_Propagate_Auto = "0";
+    HR_Propagate_AutoSum = "1";
+    HR_Propagate_AutoNormal = "1";
+    HR_Compile_TriangMethod = "0";
+    HR_Compile_Compress = "0";
+    HR_Compile_Approximate = "0";
+    HR_Compile_ApproxEpsilon = "0.00001";
+    HR_Monitor_AutoUpdGraph = "0";
+    HR_Monitor_GraphPrecision = "100";
+    HR_Monitor_OpenGraph = "0";
+    HR_Monitor_InitStates = "5";
+    HR_Monitor_InitSD = "2";
+    HR_Color_DiscreteChance = "16";
+    HR_Color_ContinuosChance = "48";
+    HR_Color_Utility = "36";
+    HR_Color_Decision = "17";
+    HR_Groups_UserGroupsNo = "0";
+    HR_Groups_GroupNames = "";
+    HR_Groups_GroupColors = "";
+}
+
+node C8_2_1
+{
+    label = "D ";
+    position = (1390 -220);
+    states = ("");
+}
+
+node C1_1_2_1
+{
+    label = "A";
+    position = (1260 -80);
+    states = ("");
+}
+
+node C2_1_2_1
+{
+    label = "B  ";
+    position = (1390 -80);
+    states = ("");
+}
+
+node C3_1_2_1
+{
+    label = "C ";
+    position = (1260 -220);
+    states = ("");
+}
+
+node C1_2
+{
+    label = "A";
+    position = (1250 140);
+    states = ("");
+}
+
+node C2_2
+{
+    label = "B";
+    position = (1380 140);
+    states = ("");
+}
+
+node C3_2
+{
+    label = "C";
+    position = (1250 0);
+    states = ("");
+}
+
+node C4_1
+{
+    label = "D ";
+    position = (1390 0);
+    states = ("");
+}
+
+node C8_3_5
+{
+    label = "D ";
+    position = (1150 -220);
+    states = ("");
+}
+
+node C1_1_3_5
+{
+    label = "A ";
+    position = (1020 -80);
+    states = ("");
+}
+
+node C2_1_3_5
+{
+    label = "B ";
+    position = (1150 -80);
+    states = ("");
+}
+
+node C3_1_3_5
+{
+    label = "C";
+    position = (1020 -220);
+    states = ("");
+}
+
+node C8_3_4
+{
+    label = "D";
+    position = (1140 0);
+    states = ("");
+}
+
+node C1_1_3_4
+{
+    label = "A ";
+    position = (1010 140);
+    states = ("");
+}
+
+node C2_1_3_4
+{
+    label = "B ";
+    position = (1140 140);
+    states = ("");
+}
+
+node C3_1_3_4
+{
+    label = "C";
+    position = (1010 0);
+    states = ("");
+}
+
+node C8_3_3
+{
+    label = "D ";
+    position = (910 -220);
+    states = ("");
+}
+
+node C1_1_3_3
+{
+    label = "A ";
+    position = (780 -80);
+    states = ("");
+}
+
+node C2_1_3_3
+{
+    label = "B ";
+    position = (910 -80);
+    states = ("");
+}
+
+node C3_1_3_3
+{
+    label = "C";
+    position = (780 -220);
+    states = ("");
+}
+
+node C8_3_2
+{
+    label = "D";
+    position = (640 -210);
+    states = ("");
+}
+
+node C1_1_3_2
+{
+    label = "A ";
+    position = (510 -70);
+    states = ("");
+}
+
+node C2_1_3_2
+{
+    label = "B  ";
+    position = (640 -70);
+    states = ("");
+}
+
+node C3_1_3_2
+{
+    label = "C ";
+    position = (510 -210);
+    states = ("");
+}
+
+node C8_3_1
+{
+    label = "D ";
+    position = (400 -210);
+    states = ("");
+}
+
+node C1_1_3_1
+{
+    label = "A ";
+    position = (270 -70);
+    states = ("");
+}
+
+node C2_1_3_1
+{
+    label = "B  ";
+    position = (400 -70);
+    states = ("");
+}
+
+node C3_1_3_1
+{
+    label = "C ";
+    position = (270 -210);
+    states = ("");
+}
+
+node C3_1_3
+{
+    label = "C ";
+    position = (10 -200);
+    states = ("");
+}
+
+node C2_1_3
+{
+    label = "B ";
+    position = (140 -60);
+    states = ("");
+}
+
+node C1_1_3
+{
+    label = "A";
+    position = (10 -60);
+    states = ("");
+}
+
+node C8_3
+{
+    label = "D ";
+    position = (140 -200);
+    states = ("");
+}
+
+node C3_1_2
+{
+    label = "C ";
+    position = (750 0);
+    states = ("");
+}
+
+node C2_1_2
+{
+    label = "B  ";
+    position = (880 140);
+    states = ("");
+}
+
+node C1_1_2
+{
+    label = "A";
+    position = (750 140);
+    states = ("");
+}
+
+node C8_2
+{
+    label = "D ";
+    position = (880 0);
+    states = ("");
+}
+
+node C3_1_1
+{
+    label = "C ";
+    position = (510 0);
+    states = ("");
+}
+
+node C2_1_1
+{
+    label = "B  ";
+    position = (640 140);
+    states = ("");
+}
+
+node C1_1_1
+{
+    label = "A ";
+    position = (510 140);
+    states = ("");
+}
+
+node C8_1
+{
+    label = "D ";
+    position = (640 0);
+    states = ("");
+}
+
+node C8
+{
+    label = "D";
+    position = (400 0);
+    states = ("");
+}
+
+node C1_1
+{
+    label = "A";
+    position = (270 140);
+    states = ("");
+}
+
+node C2_1
+{
+    label = "B ";
+    position = (400 140);
+    states = ("");
+}
+
+node C3_1
+{
+    label = "C";
+    position = (270 0);
+    states = ("");
+}
+
+node C4
+{
+    label = "D";
+    position = (140 10);
+    states = ("");
+}
+
+node C3
+{
+    label = "C";
+    position = (0 10);
+    states = ("");
+}
+
+node C2
+{
+    label = "B";
+    position = (130 150);
+    states = ("");
+}
+
+node C1
+{
+    label = "A";
+    position = (0 150);
+    states = ("");
+}
+
+potential (C8_2_1 | C2_1_2_1)
+{
+    data
+     = (( 1 ));	%  C2_1_2_1=<0>
+}
+
+potential (C1_1_2_1)
+{
+    data = ( 1 );
+}
+
+potential (C2_1_2_1 | C1_1_2_1)
+{
+    data
+     = (( 1 ));	%  C1_1_2_1=<0>
+}
+
+potential (C3_1_2_1 | C2_1_2_1)
+{
+    data
+     = (( 1 ));	%  C2_1_2_1=<0>
+}
+
+potential (C1_2 | C2_2)
+{
+    data
+     = (( 1 ));	%  C2_2=<0>
+}
+
+potential (C2_2)
+{
+    data = ( 1 );
+}
+
+potential (C3_2 | C1_2)
+{
+    data
+     = (( 1 ));	%  C1_2=<0>
+}
+
+potential (C4_1 | C1_2)
+{
+    data
+     = (( 1 ));	%  C1_2=<0>
+}
+
+potential (C8_3_5 | C2_1_3_5)
+{
+    data
+     = (( 1 ));	%  C2_1_3_5=<0>
+}
+
+potential (C1_1_3_5 | C2_1_3_5)
+{
+    data
+     = (( 1 ));	%  C2_1_3_5=<0>
+}
+
+potential (C2_1_3_5)
+{
+    data = ( 1 );
+}
+
+potential (C3_1_3_5 | C8_3_5)
+{
+    data
+     = (( 1 ));	%  C8_3_5=<0>
+}
+
+potential (C8_3_4 | C3_1_3_4)
+{
+    data
+     = (( 1 ));	%  C3_1_3_4=<0>
+}
+
+potential (C1_1_3_4)
+{
+    data = ( 1 );
+}
+
+potential (C2_1_3_4 | C1_1_3_4)
+{
+    data
+     = (( 1 ));	%  C1_1_3_4=<0>
+}
+
+potential (C3_1_3_4 | C1_1_3_4)
+{
+    data
+     = (( 1 ));	%  C1_1_3_4=<0>
+}
+
+potential (C8_3_3 | C3_1_3_3 C2_1_3_3)
+{
+    data
+     = ((( 1 )));	%  C3_1_3_3=<0>  C2_1_3_3=<0>
+}
+
+potential (C1_1_3_3)
+{
+    data = ( 1 );
+}
+
+potential (C2_1_3_3)
+{
+    data = ( 1 );
+}
+
+potential (C3_1_3_3)
+{
+    data = ( 1 );
+}
+
+potential (C8_3_2)
+{
+    data = ( 1 );
+}
+
+potential (C1_1_3_2)
+{
+    data = ( 1 );
+}
+
+potential (C2_1_3_2)
+{
+    data = ( 1 );
+}
+
+potential (C3_1_3_2 | C8_3_2 C1_1_3_2)
+{
+    data
+     = ((( 1 )));	%  C8_3_2=<0>  C1_1_3_2=<0>
+}
+
+potential (C8_3_1 | C2_1_3_1 C1_1_3_1)
+{
+    data
+     = ((( 1 )));	%  C2_1_3_1=<0>  C1_1_3_1=<0>
+}
+
+potential (C1_1_3_1)
+{
+    data = ( 1 );
+}
+
+potential (C2_1_3_1)
+{
+    data = ( 1 );
+}
+
+potential (C3_1_3_1)
+{
+    data = ( 1 );
+}
+
+potential (C3_1_3 | C2_1_3 C1_1_3)
+{
+    data
+     = ((( 1 )));	%  C2_1_3=<0>  C1_1_3=<0>
+}
+
+potential (C2_1_3)
+{
+    data = ( 1 );
+}
+
+potential (C1_1_3)
+{
+    data = ( 1 );
+}
+
+potential (C8_3)
+{
+    data = ( 1 );
+}
+
+potential (C3_1_2 | C2_1_2)
+{
+    data
+     = (( 1 ));	%  C2_1_2=<0>
+}
+
+potential (C2_1_2)
+{
+    data = ( 1 );
+}
+
+potential (C1_1_2 | C2_1_2)
+{
+    data
+     = (( 1 ));	%  C2_1_2=<0>
+}
+
+potential (C8_2 | C2_1_2)
+{
+    data
+     = (( 1 ));	%  C2_1_2=<0>
+}
+
+potential (C3_1_1 | C1_1_1)
+{
+    data
+     = (( 1 ));	%  C1_1_1=<0>
+}
+
+potential (C2_1_1)
+{
+    data = ( 1 );
+}
+
+potential (C1_1_1 | C2_1_1)
+{
+    data
+     = (( 1 ));	%  C2_1_1=<0>
+}
+
+potential (C8_1 | C2_1_1)
+{
+    data
+     = (( 1 ));	%  C2_1_1=<0>
+}
+
+potential (C8 | C2_1)
+{
+    data
+     = (( 1 ));	%  C2_1=<0>
+}
+
+potential (C1_1)
+{
+    data = ( 1 );
+}
+
+potential (C2_1 | C1_1)
+{
+    data
+     = (( 1 ));	%  C1_1=<0>
+}
+
+potential (C3_1 | C1_1)
+{
+    data
+     = (( 1 ));	%  C1_1=<0>
+}
+
+potential (C4 | C1)
+{
+    data
+     = (( 1 ));	%  C1=<0>
+}
+
+potential (C3 | C1)
+{
+    data
+     = (( 1 ));	%  C1=<0>
+}
+
+potential (C2 | C1)
+{
+    data
+     = (( 1 ));	%  C1=<0>
+}
+
+potential (C1)
+{
+    data = ( 1 );
+}

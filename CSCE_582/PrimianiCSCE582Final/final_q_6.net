@@ -1,0 +1,263 @@
+net
+{
+    node_size = (100 40);
+    HR_DBN_Num_Slices = "5";
+    HR_Desc = "";
+    HR_OOBN_CheckConsistency = "1";
+    HR_OOBN_FitExpand = "1";
+    HR_Zoom_ZoomFactor = "100";
+    HR_Groups_GroupColors = "";
+    HR_Groups_GroupNames = "";
+    HR_Groups_UserGroupsNo = "0";
+    HR_Utility_Link = "63";
+    HR_Probabilistic_Link = "63";
+    HR_Functional_Link = "63";
+    HR_Binding_Link = "63";
+    HR_Information_Arc = "63";
+    HR_Color_Interface = "21";
+    HR_Color_Instance = "0";
+    HR_Color_DiscreteFunction = "5";
+    HR_Color_Function = "4";
+    HR_Color_Utility = "36";
+    HR_Color_Decision = "17";
+    HR_Color_ContinuousChance = "48";
+    HR_Color_DiscreteChance = "16";
+    HR_Monitor_InitSD = "2";
+    HR_Monitor_Utility_Arrange = "0";
+    HR_Monitor_Mean_Variance = "1";
+    HR_Monitor_Chance_Utility = "1";
+    HR_Monitor_InitStates = "5";
+    HR_Monitor_OpenGraph = "0";
+    HR_Monitor_GraphPrecision = "100";
+    HR_Monitor_AutoUpdGraph = "0";
+    HR_Compile_MaxMinimalSeparators = "100000";
+    HR_Compile_ApproxEpsilon = "1.0E-5";
+    HR_Compile_Approximate = "0";
+    HR_Compile_SaveToMemory = "0";
+    HR_Compile_Compress = "0";
+    HR_Compile_TriangMethod = "0";
+    HR_Propagate_AutoNormal = "1";
+    HR_Propagate_AutoSum = "1";
+    HR_Propagate_Auto = "1";
+    HR_Font_Italic = "0";
+    HR_Font_Weight = "400";
+    HR_Font_Size = "-12";
+    HR_Font_Name = "javax.swing.plaf.FontUIResource[family=Dialog,name=Dialog,style=bold,size=12]";
+    HR_Grid_GridShow = "0";
+    HR_Grid_GridSnap = "0";
+    HR_Grid_Y = "40";
+    HR_Grid_X = "40";
+    HRUNTIME_Grid_X = "10";
+    HRUNTIME_Grid_Y = "10";
+    HRUNTIME_Grid_GridSnap = "1";
+    HRUNTIME_Grid_GridShow = "0";
+    HRUNTIME_Font_Name = "Arial";
+    HRUNTIME_Font_Size = "-12";
+    HRUNTIME_Font_Weight = "400";
+    HRUNTIME_Font_Italic = "0";
+    HRUNTIME_Propagate_Auto = "0";
+    HRUNTIME_Propagate_AutoSum = "1";
+    HRUNTIME_Propagate_AutoNormal = "1";
+    HRUNTIME_Compile_TriangMethod = "0";
+    HRUNTIME_Compile_Compress = "0";
+    HRUNTIME_Compile_Approximate = "0";
+    HRUNTIME_Compile_ApproxEpsilon = "0.00001";
+    HRUNTIME_Monitor_AutoUpdGraph = "0";
+    HRUNTIME_Monitor_GraphPrecision = "100";
+    HRUNTIME_Monitor_OpenGraph = "0";
+    HRUNTIME_Monitor_InitStates = "5";
+}
+
+node B
+{
+    label = "";
+    position = (160 150);
+    states = ("y" "n");
+    HR_LinkGroup = "[Conj2:0][Conj1:0]";
+    HR_LinkMode = "[Conj2:0][Conj1:0]";
+}
+
+node Conj1
+{
+    label = "";
+    position = (60 0);
+    states = ("y" "n");
+    HR_LinkGroup = "[Conj2:0]";
+    HR_LinkMode = "[Conj2:0]";
+}
+
+node C
+{
+    label = "";
+    position = (320 150);
+    states = ("y" "n");
+    HR_LinkGroup = "[Conj3:0][Conj2:0][Conj1:0]";
+    HR_LinkMode = "[Conj3:0][Conj2:0][Conj1:0]";
+}
+
+node E
+{
+    label = "";
+    position = (590 150);
+    states = ("y" "n");
+    HR_LinkGroup = "[Conj3:0]";
+    HR_LinkMode = "[Conj3:0]";
+}
+
+node Conj2
+{
+    label = "";
+    position = (230 0);
+    states = ("y" "n");
+    HR_LinkGroup = "[Conj3:0]";
+    HR_LinkMode = "[Conj3:0]";
+}
+
+node A
+{
+    label = "";
+    position = (0 160);
+    states = ("y" "n");
+    HR_LinkGroup = "[Result:0][Conj1:0]";
+    HR_LinkMode = "[Result:0][Conj1:0]";
+}
+
+node D
+{
+    label = "";
+    position = (460 150);
+    states = ("y" "n");
+    HR_LinkGroup = "[Result:0][Conj2:0]";
+    HR_LinkMode = "[Result:0][Conj2:0]";
+}
+
+node F
+{
+    label = "";
+    position = (730 160);
+    states = ("y" "n");
+    HR_LinkGroup = "[Result:0][Conj3:0]";
+    HR_LinkMode = "[Result:0][Conj3:0]";
+}
+
+node Conj3
+{
+    label = "";
+    position = (420 0);
+    states = ("y" "n");
+    HR_LinkGroup = "[Result:0]";
+    HR_LinkMode = "[Result:0]";
+}
+
+node Result
+{
+    label = "";
+    position = (590 0);
+    states = ("y" "n");
+}
+
+potential (B)
+{
+    data = ( 0.5 0.5 );
+}
+
+potential (Conj1 | A B C)
+{
+    data
+     = (((( 1 0 )	%  A=y  B=y  C=y
+	  ( 1 0 ))	%  A=y  B=y  C=n
+	 (( 1 0 )	%  A=y  B=n  C=y
+	  ( 1 0 )))	%  A=y  B=n  C=n
+	((( 1 0 )	%  A=n  B=y  C=y
+	  ( 0 1 ))	%  A=n  B=y  C=n
+	 (( 0 1 )	%  A=n  B=n  C=y
+	  ( 1 0 ))));	%  A=n  B=n  C=n
+}
+
+potential (C)
+{
+    data = ( 0.5 0.5 );
+}
+
+potential (E)
+{
+    data = ( 0.5 0.5 );
+}
+
+potential (Conj2 | B C D Conj1)
+{
+    data
+     = ((((( 1 0 )	%  B=y  C=y  D=y  Conj1=y
+	   ( 0 1 ))	%  B=y  C=y  D=y  Conj1=n
+	  (( 0 1 )	%  B=y  C=y  D=n  Conj1=y
+	   ( 0 1 )))	%  B=y  C=y  D=n  Conj1=n
+	 ((( 1 0 )	%  B=y  C=n  D=y  Conj1=y
+	   ( 0 1 ))	%  B=y  C=n  D=y  Conj1=n
+	  (( 1 0 )	%  B=y  C=n  D=n  Conj1=y
+	   ( 0 1 ))))	%  B=y  C=n  D=n  Conj1=n
+	(((( 1 0 )	%  B=n  C=y  D=y  Conj1=y
+	   ( 0 1 ))	%  B=n  C=y  D=y  Conj1=n
+	  (( 1 0 )	%  B=n  C=y  D=n  Conj1=y
+	   ( 0 1 )))	%  B=n  C=y  D=n  Conj1=n
+	 ((( 0 1 )	%  B=n  C=n  D=y  Conj1=y
+	   ( 0 1 ))	%  B=n  C=n  D=y  Conj1=n
+	  (( 1 0 )	%  B=n  C=n  D=n  Conj1=y
+	   ( 0 1 )))));	%  B=n  C=n  D=n  Conj1=n
+}
+
+potential (A)
+{
+    data = ( 0.5 0.5 );
+}
+
+potential (D)
+{
+    data = ( 0.5 0.5 );
+}
+
+potential (F)
+{
+    data = ( 0.5 0.5 );
+}
+
+potential (Conj3 | C E F Conj2)
+{
+    data
+     = ((((( 1 0 )	%  C=y  E=y  F=y  Conj2=y
+	   ( 0 1 ))	%  C=y  E=y  F=y  Conj2=n
+	  (( 1 0 )	%  C=y  E=y  F=n  Conj2=y
+	   ( 0 1 )))	%  C=y  E=y  F=n  Conj2=n
+	 ((( 0 1 )	%  C=y  E=n  F=y  Conj2=y
+	   ( 0 1 ))	%  C=y  E=n  F=y  Conj2=n
+	  (( 1 0 )	%  C=y  E=n  F=n  Conj2=y
+	   ( 0 1 ))))	%  C=y  E=n  F=n  Conj2=n
+	(((( 0 1 )	%  C=n  E=y  F=y  Conj2=y
+	   ( 0 1 ))	%  C=n  E=y  F=y  Conj2=n
+	  (( 1 0 )	%  C=n  E=y  F=n  Conj2=y
+	   ( 0 1 )))	%  C=n  E=y  F=n  Conj2=n
+	 ((( 1 0 )	%  C=n  E=n  F=y  Conj2=y
+	   ( 0 1 ))	%  C=n  E=n  F=y  Conj2=n
+	  (( 1 0 )	%  C=n  E=n  F=n  Conj2=y
+	   ( 0 1 )))));	%  C=n  E=n  F=n  Conj2=n
+}
+
+potential (Result | A D F Conj3)
+{
+    data
+     = ((((( 1 0 )	%  A=y  D=y  F=y  Conj3=y
+	   ( 0 1 ))	%  A=y  D=y  F=y  Conj3=n
+	  (( 1 0 )	%  A=y  D=y  F=n  Conj3=y
+	   ( 0 1 )))	%  A=y  D=y  F=n  Conj3=n
+	 ((( 1 0 )	%  A=y  D=n  F=y  Conj3=y
+	   ( 0 1 ))	%  A=y  D=n  F=y  Conj3=n
+	  (( 0 1 )	%  A=y  D=n  F=n  Conj3=y
+	   ( 0 1 ))))	%  A=y  D=n  F=n  Conj3=n
+	(((( 1 0 )	%  A=n  D=y  F=y  Conj3=y
+	   ( 0 1 ))	%  A=n  D=y  F=y  Conj3=n
+	  (( 0 1 )	%  A=n  D=y  F=n  Conj3=y
+	   ( 0 1 )))	%  A=n  D=y  F=n  Conj3=n
+	 ((( 1 0 )	%  A=n  D=n  F=y  Conj3=y
+	   ( 0 1 ))	%  A=n  D=n  F=y  Conj3=n
+	  (( 1 0 )	%  A=n  D=n  F=n  Conj3=y
+	   ( 0 1 )))));	%  A=n  D=n  F=n  Conj3=n
+}

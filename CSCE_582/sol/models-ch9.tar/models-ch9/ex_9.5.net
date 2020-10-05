@@ -1,0 +1,492 @@
+net
+{
+    node_size = (110 54);
+    HR_Desc = "";
+    HR_OOBN_CheckConsistency = "1";
+    HR_OOBN_FitExpand = "1";
+    HR_Zoom_ZoomFactor = "75";
+    HR_Color_Interface = "-1";
+    HR_Color_Instance = "-1";
+    HR_Color_ContinuousChance = "-1";
+    HR_Compile_MaxMinimalSeparators = "100000";
+    HR_Grid_X = "10";
+    HR_Grid_Y = "10";
+    HR_Grid_GridSnap = "1";
+    HR_Grid_GridShow = "0";
+    HR_Font_Name = "Arial";
+    HR_Font_Size = "-12";
+    HR_Font_Weight = "400";
+    HR_Font_Italic = "0";
+    HR_Propagate_Auto = "0";
+    HR_Propagate_AutoSum = "1";
+    HR_Propagate_AutoNormal = "1";
+    HR_Compile_TriangMethod = "0";
+    HR_Compile_Compress = "0";
+    HR_Compile_Approximate = "0";
+    HR_Compile_ApproxEpsilon = "0.00001";
+    HR_Monitor_AutoUpdGraph = "0";
+    HR_Monitor_GraphPrecision = "100";
+    HR_Monitor_OpenGraph = "0";
+    HR_Monitor_InitStates = "5";
+    HR_Monitor_InitSD = "2";
+    HR_Color_DiscreteChance = "16";
+    HR_Color_ContinuosChance = "48";
+    HR_Color_Utility = "36";
+    HR_Color_Decision = "17";
+    HR_Groups_UserGroupsNo = "0";
+    HR_Groups_GroupNames = "";
+    HR_Groups_GroupColors = "";
+    HRUNTIME_Grid_X = "10";
+    HRUNTIME_Grid_Y = "10";
+    HRUNTIME_Grid_GridSnap = "1";
+    HRUNTIME_Grid_GridShow = "0";
+    HRUNTIME_Font_Name = "Arial";
+    HRUNTIME_Font_Size = "-12";
+    HRUNTIME_Font_Weight = "400";
+    HRUNTIME_Font_Italic = "0";
+    HRUNTIME_Propagate_Auto = "0";
+    HRUNTIME_Propagate_AutoSum = "1";
+    HRUNTIME_Propagate_AutoNormal = "1";
+    HRUNTIME_Compile_TriangMethod = "0";
+    HRUNTIME_Compile_Compress = "0";
+    HRUNTIME_Compile_Approximate = "0";
+    HRUNTIME_Compile_ApproxEpsilon = "0.00001";
+    HRUNTIME_Monitor_AutoUpdGraph = "0";
+    HRUNTIME_Monitor_GraphPrecision = "100";
+    HRUNTIME_Monitor_OpenGraph = "0";
+    HRUNTIME_Monitor_InitStates = "5";
+}
+
+utility U2_3
+{
+    label = "Mare";
+    position = (818 98);
+    HR_Desc = "";
+    HR_NodeSize = "(110, 54)";
+    HR_Group = "0";
+}
+
+utility U2_2
+{
+    label = "Mare";
+    position = (638 330);
+    HR_Desc = "";
+    HR_NodeSize = "(110, 54)";
+    HR_Group = "0";
+}
+
+utility U2_1
+{
+    label = "Mare";
+    position = (420 330);
+    HR_Desc = "";
+    HR_NodeSize = "(110, 54)";
+    HR_Group = "0";
+}
+
+utility U1_1_1
+{
+    label = "Stallion";
+    position = (878 180);
+    HR_NodeSize = "(110, 54)";
+    HR_Desc = "";
+    HR_Group = "0";
+}
+
+utility U1_1
+{
+    label = "Stallion";
+    position = (735 338);
+    HR_LinkMode_U1_1 = "0";
+    HR_Desc = "";
+    HR_NodeSize = "(110, 54)";
+    HR_Group = "0";
+}
+
+utility U2
+{
+    label = "Mare";
+    position = (375 105);
+    HR_NodeSize = "(110, 54)";
+    HR_Group = "0";
+    HR_Desc = "";
+}
+
+utility U1
+{
+    label = "Stallion\n";
+    position = (345 180);
+    HR_NodeSize = "(110, 54)";
+    HR_Group = "0";
+    HR_Desc = "";
+}
+
+decision D2_5
+{
+    label = "Remove Gwenn?\n";
+    position = (938 98);
+    states = ("yes" "no");
+    HR_LinkMode_U2_3 = "0";
+    HR_NodeSize = "(110, 54)";
+    HR_State_0 = "";
+    HR_State_1 = "";
+    HR_Desc = "";
+    HR_Group = "0";
+}
+
+decision D2_1_1
+{
+    label = "Remove Eric?";
+    position = (990 180);
+    states = ("yes" "no");
+    HR_LinkMode_D2_5 = "0";
+    HR_LinkMode_U1_1_1 = "0";
+    HR_NodeSize = "(110, 54)";
+    HR_Desc = "";
+    HR_State_1 = "";
+    HR_State_0 = "";
+    HR_Group = "0";
+}
+
+decision D2_4
+{
+    label = "Remove Brian?";
+    position = (893 338);
+    states = ("yes" "no");
+    HR_LinkMode_D2_1_1 = "0";
+    HR_LinkMode_U1_1 = "0";
+    HR_NodeSize = "(110, 54)";
+    HR_State_0 = "";
+    HR_State_1 = "";
+    HR_Desc = "";
+    HR_Group = "0";
+}
+
+decision D2_3
+{
+    label = "Remove Ann?";
+    position = (525 375);
+    states = ("yes" "no");
+    HR_LinkMode_D2_4 = "0";
+    HR_LinkMode_U2_2 = "0";
+    HR_NodeSize = "(110, 54)";
+    HR_State_0 = "";
+    HR_State_1 = "";
+    HR_Desc = "";
+    HR_Group = "0";
+}
+
+decision D2_2
+{
+    label = "Remove Cecily?";
+    position = (293 330);
+    states = ("yes" "no");
+    HR_LinkMode_D2_3 = "0";
+    HR_LinkMode_U2_1 = "0";
+    HR_NodeSize = "(110, 54)";
+    HR_State_0 = "";
+    HR_State_1 = "";
+    HR_Desc = "";
+    HR_Group = "0";
+}
+
+decision D2_1
+{
+    label = "Remove Fred?";
+    position = (233 180);
+    states = ("yes" "no");
+    HR_LinkMode_D2_2 = "0";
+    HR_LinkMode_U1_2 = "0";
+    HR_LinkMode_U1 = "0";
+    HR_NodeSize = "(110, 54)";
+    HR_State_0 = "";
+    HR_State_1 = "";
+    HR_Desc = "";
+    HR_Group = "0";
+}
+
+decision D2
+{
+    label = "Remove Dorothy?";
+    position = (270 105);
+    states = ("yes" "no");
+    HR_LinkMode_U2_4 = "0";
+    HR_LinkMode_D2_1 = "0";
+    HR_LinkMode_U2 = "0";
+    HR_Group = "0";
+    HR_Desc = "";
+    HR_State_1 = "";
+    HR_State_0 = "";
+}
+
+node L
+{
+    label = "";
+    position = (375 255);
+    states = ("Carrier" "Pure");
+    HR_LinkMode_Fred = "0";
+}
+
+node Cecily
+{
+    label = "";
+    position = (472 255);
+    states = ("Carrier" "Pure");
+    HR_LinkMode_U2_1 = "0";
+    HR_LinkMode_Eric = "0";
+}
+
+node Fred
+{
+    label = "";
+    position = (450 180);
+    states = ("Carrier" "Pure");
+    HR_LinkMode_U1_2 = "0";
+    HR_LinkMode_U1 = "0";
+    HR_LinkMode_Henry = "0";
+}
+
+node Ann
+{
+    label = "";
+    position = (600 255);
+    states = ("Carrier" "Pure");
+    HR_LinkMode_U2_2 = "0";
+    HR_LinkMode_Fred = "0";
+    HR_LinkMode_Dorothy = "0";
+    HR_LinkMode_Gwenn = "0";
+}
+
+node Eric
+{
+    label = "";
+    position = (772 180);
+    states = ("Carrier" "Pure");
+    HR_LinkMode_U1_1_1 = "0";
+    HR_LinkMode_Irene = "0";
+}
+
+node Brian
+{
+    label = "";
+    position = (716 255);
+    states = ("Carrier" "Pure");
+    HR_LinkMode_U1_1 = "0";
+    HR_LinkMode_Eric = "0";
+    HR_LinkMode_Dorothy = "0";
+}
+
+node Henry
+{
+    label = "";
+    position = (495 105);
+    states = ("Carrier" "Pure");
+    HR_LinkMode_John = "0";
+}
+
+node Dorothy
+{
+    label = "";
+    position = (562 180);
+    states = ("Carrier" "Pure");
+    HR_LinkMode_U2_4 = "0";
+    HR_LinkMode_U2 = "0";
+    HR_LinkMode_Henry = "0";
+}
+
+node Irene
+{
+    label = "";
+    position = (697 98);
+    states = ("Carrier" "Pure");
+    HR_LinkMode_John = "0";
+}
+
+node Gwenn
+{
+    label = "";
+    position = (660 180);
+    states = ("Carrier" "Pure");
+    HR_LinkMode_U2_3 = "0";
+    HR_LinkMode_Irene = "0";
+}
+
+node John
+{
+    label = "John";
+    position = (592 23);
+    states = ("Sick" "Carrier" "Pure");
+}
+
+node K
+{
+    label = "";
+    position = (813 255);
+    states = ("Carrier" "Pure");
+    HR_LinkMode_Gwenn = "0";
+}
+
+potential (U2_3 | D2_5 Gwenn)
+{
+    data
+     = (( -3	%  D2_5=yes  Gwenn=Carrier
+	  -3 )	%  D2_5=yes  Gwenn=Pure
+	( -10	%  D2_5=no  Gwenn=Carrier
+	  40 ));	%  D2_5=no  Gwenn=Pure
+}
+
+potential (U2_2 | Ann D2_3)
+{
+    data
+     = (( -3	%  Ann=Carrier  D2_3=yes
+	  -10 )	%  Ann=Carrier  D2_3=no
+	( -3	%  Ann=Pure  D2_3=yes
+	  40 ));	%  Ann=Pure  D2_3=no
+}
+
+potential (U2_1 | Cecily D2_2)
+{
+    data
+     = (( -3	%  Cecily=Carrier  D2_2=yes
+	  -10 )	%  Cecily=Carrier  D2_2=no
+	( -3	%  Cecily=Pure  D2_2=yes
+	  40 ));	%  Cecily=Pure  D2_2=no
+}
+
+potential (U1_1_1 | Eric D2_1_1)
+{
+    data
+     = (( -10	%  Eric=Carrier  D2_1_1=yes
+	  -40 )	%  Eric=Carrier  D2_1_1=no
+	( -10	%  Eric=Pure  D2_1_1=yes
+	  100 ));	%  Eric=Pure  D2_1_1=no
+}
+
+potential (U1_1 | Brian D2_4)
+{
+    data
+     = (( -10	%  Brian=Carrier  D2_4=yes
+	  -40 )	%  Brian=Carrier  D2_4=no
+	( -10	%  Brian=Pure  D2_4=yes
+	  100 ));	%  Brian=Pure  D2_4=no
+}
+
+potential (U2 | Dorothy D2)
+{
+    data
+     = (( -3	%  Dorothy=Carrier  D2=yes
+	  -10 )	%  Dorothy=Carrier  D2=no
+	( -3	%  Dorothy=Pure  D2=yes
+	  40 ));	%  Dorothy=Pure  D2=no
+}
+
+potential (U1 | D2_1 Fred)
+{
+    data
+     = (( -10	%  D2_1=yes  Fred=Carrier
+	  -10 )	%  D2_1=yes  Fred=Pure
+	( -40	%  D2_1=no  Fred=Carrier
+	  100 ));	%  D2_1=no  Fred=Pure
+}
+
+potential (D2_5 | D2_1_1) {}
+
+potential (D2_1_1 | D2_4) {}
+
+potential (D2_4 | D2_3) {}
+
+potential (D2_3 | D2_2) {}
+
+potential (D2_2 | D2_1) {}
+
+potential (D2_1 | D2) {}
+
+potential (D2) {}
+
+potential (L)
+{
+    data = ( 0.005 0.995 );
+}
+
+potential (Cecily)
+{
+    data = ( 0.005 0.995 );
+}
+
+potential (Fred | L Ann)
+{
+    data
+     = ((( 0.666667 0.333333 )	%  L=Carrier  Ann=Carrier
+	 ( 0.5 0.5 ))	%  L=Carrier  Ann=Pure
+	(( 0.5 0.5 )	%  L=Pure  Ann=Carrier
+	 ( 0 1 )));	%  L=Pure  Ann=Pure
+}
+
+potential (Ann)
+{
+    data = ( 0.005 0.995 );
+}
+
+potential (Eric | Brian Cecily)
+{
+    data
+     = ((( 0.666667 0.333333 )	%  Brian=Carrier  Cecily=Carrier
+	 ( 0.5 0.5 ))	%  Brian=Carrier  Cecily=Pure
+	(( 0.5 0.5 )	%  Brian=Pure  Cecily=Carrier
+	 ( 0 1 )));	%  Brian=Pure  Cecily=Pure
+}
+
+potential (Brian)
+{
+    data = ( 0.005 0.995 );
+}
+
+potential (Henry | Fred Dorothy)
+{
+    data
+     = ((( 0.666667 0.333333 )	%  Fred=Carrier  Dorothy=Carrier
+	 ( 0.5 0.5 ))	%  Fred=Carrier  Dorothy=Pure
+	(( 0.5 0.5 )	%  Fred=Pure  Dorothy=Carrier
+	 ( 0 1 )));	%  Fred=Pure  Dorothy=Pure
+}
+
+potential (Dorothy | Ann Brian)
+{
+    data
+     = ((( 0.666667 0.333333 )	%  Ann=Carrier  Brian=Carrier
+	 ( 0.5 0.5 ))	%  Ann=Carrier  Brian=Pure
+	(( 0.5 0.5 )	%  Ann=Pure  Brian=Carrier
+	 ( 0 1 )));	%  Ann=Pure  Brian=Pure
+}
+
+potential (Irene | Eric Gwenn)
+{
+    data
+     = ((( 0.666667 0.333333 )	%  Eric=Carrier  Gwenn=Carrier
+	 ( 0.5 0.5 ))	%  Eric=Carrier  Gwenn=Pure
+	(( 0.5 0.5 )	%  Eric=Pure  Gwenn=Carrier
+	 ( 0 1 )));	%  Eric=Pure  Gwenn=Pure
+}
+
+potential (Gwenn | Ann K)
+{
+    data
+     = ((( 0.666667 0.333333 )	%  Ann=Carrier  K=Carrier
+	 ( 0.5 0.5 ))	%  Ann=Carrier  K=Pure
+	(( 0.5 0.5 )	%  Ann=Pure  K=Carrier
+	 ( 0 1 )));	%  Ann=Pure  K=Pure
+}
+
+potential (John | Henry Irene)
+{
+    data
+     = ((( 0.25 0.5 0.25 )	%  Henry=Carrier  Irene=Carrier
+	 ( 0 0.5 0.5 ))	%  Henry=Carrier  Irene=Pure
+	(( 0 0.5 0.5 )	%  Henry=Pure  Irene=Carrier
+	 ( 0 0 1 )));	%  Henry=Pure  Irene=Pure
+}
+
+potential (K)
+{
+    data = ( 0.005 0.995 );
+}

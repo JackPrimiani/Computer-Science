@@ -1,0 +1,161 @@
+\documentclass[fleqn]{article}
+\usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
+\usepackage{mathexam}
+
+\ExamClass{CSCE 240}
+\ExamName{Homework 3}
+\ExamHead{Due: 05 Oct 2018}
+
+\let
+\ds
+\displaystyle
+
+\begin{document}
+\ExamInstrBox {
+  You shall submit a zipped, \textbf{and only zipped}, archive of your homework
+  directory, hw3. The directory shall contain, at a minimum, the files
+  \texttt{max\_heap.h} and \texttt{max\_heap.cc}.
+
+  I will use my own makefile and tests to evaluate your library.
+}
+%
+``Hurricane Florence'' has left us a week behind. We should be working on a
+project involving objects, but have not covered that material. This leaves us
+having one more function library assignment. This is not a useless task. If you
+program in languages like JavaScript or Python(especially using the Django
+framework), you may find yourself building modules of functions similar to the
+library we are creating in this assignment.\\
+\\
+There is a well-studied data structure called a binary heap. It is very
+efficient in maintaining and providing a list of minimum or maximum values from
+a set. It is nearly always used in implementing a priority queue---a scheduling
+tool. Your understanding of this structure will be expected in CSCE 311. They
+are used in managing processes in a CPU. \\
+\\
+I would like to be able to treat an integer array as a max heap. \\
+\\
+A max heap uses a binary tree stored in a special way. Rather than nodes and
+pointers, the entire structure is kept in an array. The left and right children
+of each node at index $n$ are stored at indices $2n + 1$ and $2n + 2$,
+respectively. I would highly recommend making making two functions, \\
+\texttt{inline int left(int root);} and \\
+\texttt{inline int right(int root);}. \\
+Each function simply returns the calculation, where root is $n$. Less mess,
+easier to read, and little chance of calculation errors. One more function which
+will be \textbf{highly} valuable is \\
+\texttt{inline int parent(int child);}. \\
+This function inspects the child's index, determines if it is a right or left
+child and uses that information to calculate the parent index of the given child
+index.
+%
+\vspace{1.0em} \\
+You must provide the following functions:
+\begin{itemize}
+  \item \texttt{void Add(int item, int heap[], int count)}
+  \begin{itemize}
+    \item Function accepts an item to be added to heap, an array representing
+      the heap, and count, the current number of items in the heap.
+    \item Precondition(s):
+      \begin{itemize}
+        \item Size of int array heap is greater than count
+      \end{itemize}
+    \item Postcondition(s):
+      \begin{itemize}
+        \item item is stored in heap
+        \item Heap Property: For each node in the tree stored in heap, a node's
+          children's values are less than the node's value.
+      \end{itemize}
+    \item Algorithm:
+      \begin{enumerate}
+        \item Add the element to the bottom level of the heap.
+        \item Compare the added element with its parent; if they are in the
+            correct order, stop.
+        \item If not, swap the element with its parent and return to the
+            previous step.
+      \end{enumerate}
+  \end{itemize}
+  \newpage
+
+  \item \texttt{int Remove(int heap[], int count)}
+    \begin{itemize}
+      \item Accepts heap, an int array representing
+        the heap and count, the current number of items in the heap. Function
+        removes the largest value from heap and returns that value.
+      \item Precondition(s):
+        \begin{itemize}
+          \item Size of int array heap is greater than or equal to count
+        \end{itemize}
+      \item Postcondition(s):
+        \begin{itemize}
+          \item Largest value removed from heap and returned by function
+          \item Heap Property: For each node in the tree stored in heap, a
+            node's children's values are less than the node's value
+        \end{itemize}
+      \item Algorithm:
+        \begin{enumerate}
+          \item Replace the root of the heap with the last element on the last
+            level.
+          \item Compare the new root with its children; if they are in the
+            correct order, stop.
+          \item If not, swap the element with its LARGER child and return to the
+              previous step.
+        \end{enumerate}
+    \end{itemize}
+
+  \item \texttt{void MaxHeapify(int array[], int count)}:
+    \begin{itemize}
+      \item The function accepts an integer array array, and the size of the
+          array count, and performs an \textbf{IN-PLACE} conversion to a binary
+          max heap, likely using the function Add.
+      \item Precondition(s):
+        \begin{itemize}
+          \item Size of int array array is greater than or equal to count
+        \end{itemize}
+      \item Postcondition(s):
+        \begin{itemize}
+          \item Heap Property: For each node in the tree stored in array, a
+            node's children's values are less than the node's value
+        \end{itemize}
+    \end{itemize}
+
+  \item \texttt{void HeapSortAsc(int array[], int count)}:
+    \begin{itemize}
+      \item The function accepts an integer array and performs an
+          \textbf{IN-PLACE} sort using the MaxHeap functions above.
+      \item Precondition(s):
+        \begin{itemize}
+          \item Size of int array array is greater than or equal to count
+        \end{itemize}
+      \item Postcondition(s):
+        \begin{itemize}
+          \item Sorted: for each index $[0, \ldots, i, i+1, \ldots,  n]$,
+            array[$i$] $\leq$ array[$i + 1$]
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\vspace{1.0em}
+%
+Late assignments will lose 25\% per day late, with no assignment begin accepted
+after 4 days (100\% reduction in points).\\
+\\
+%
+There are up to seven (7) points for correctness:
+\begin{enumerate}
+  \item 1 POINT: Compilation without errors or warnings.
+  \item 1 POINT: Correctly implemented Add function for binary MaxHeap.
+  \item 1 POINT: Correctly implemented Remove function for binary MaxHeap.
+  \item 2 POINTS: Correctly implemented MaxHeapify function for binary MaxHeap.
+  \item 2 POINTS: Correctly implemented HeapSortAsc function for binary MaxHeap.
+\end{enumerate}
+%
+Additionally, there is a 25\% penalty for compilation warnings and a 25\%
+penalty for incorrect directory structure. \\ \\
+%
+The last three (3) points are earned by correct styling. You should be using
+CppLint to determine correctness of style. There is \textbf{NO} reason to not
+earn these points. \\ \\
+%
+One final note: You may not use the {\LARGE\textbf{algorithm}} library. Notice
+in the provided test file I check for it.
+\end{document}
+

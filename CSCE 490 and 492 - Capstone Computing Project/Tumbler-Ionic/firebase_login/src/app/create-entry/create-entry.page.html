@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Record Fall</ion-title>
+	<ion-buttons slot="start">
+			<ion-button color ="red" (click) ="cancel()">Cancel</ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="stage == 0" class="ion-padding">
+	<ion-label size ="large">{{ questions[stage] }} </ion-label>
+	<ion-list>
+	<ion-item>
+		<ion-label>Date </ion-label>
+		<ion-datetime [(ngModel)]="date"
+								max="{{ latest_date }}"
+								display-format="DDD, MMMM DD YYYY"
+								picker-format="MMMM DD YYYY"
+								
+								placeholder="Pick the date">
+		</ion-datetime>
+		
+	</ion-item>
+	<ion-item>
+		<ion-label>Hour </ion-label>
+		<ion-select [(ngModel)]="time" placeholder="Select One">
+			<ion-select-option value = "1">1</ion-select-option>
+			<ion-select-option value = "2">2</ion-select-option>
+			<ion-select-option value = "3">3</ion-select-option>
+			<ion-select-option value = "4">4</ion-select-option>
+			<ion-select-option value = "5">5</ion-select-option>
+			<ion-select-option value = "6">6</ion-select-option>
+			<ion-select-option value = "7">7</ion-select-option>
+			<ion-select-option value = "8">8</ion-select-option>
+			<ion-select-option value = "9">9</ion-select-option>
+			<ion-select-option value = "10">10</ion-select-option>
+			<ion-select-option value = "11">11</ion-select-option>
+			<ion-select-option value = "12">12</ion-select-option>
+		</ion-select>
+	</ion-item>
+	<ion-item>
+		<ion-label>{{ "Was it A.M. or P.M." }}</ion-label>
+		<ion-select [(ngModel)]="timep" placeholder="Select One">
+			<ion-select-option value = "A.M.">A.M.</ion-select-option>
+			<ion-select-option value = "P.M.">P.M.</ion-select-option>
+		</ion-select>
+	</ion-item>
+	</ion-list>
+</ion-content>
+
+<ion-content *ngIf="stage == 1" class="ion-padding">
+	<ion-label>{{ questions[stage] }} </ion-label>
+	<ion-list>
+	<ion-item>
+		<ion-label>Experience-Injury </ion-label>
+		<ion-select [(ngModel)]="injury" placeholder="Select One">
+			<ion-select-option value = "true">Yes</ion-select-option>
+			<ion-select-option value = "false">No</ion-select-option>
+		</ion-select>
+	</ion-item>
+	<ion-item>
+		<ion-label>{{ "Requried Medical Attention" }}</ion-label>
+		<ion-select [(ngModel)]="requriedMedical" placeholder="No">
+			<ion-select-option value = "true">Yes</ion-select-option>
+			<ion-select-option value = "false">No</ion-select-option>
+		</ion-select>
+	</ion-item>
+	</ion-list>
+</ion-content>
+
+<ion-content *ngIf="stage == 2" class="ion-padding">
+	<ion-label>{{ questions[stage] }} </ion-label>
+	<ion-list>
+		<ion-item *ngFor="let pic of servertyScale"
+							(click) ="resetSel()"
+							(click) ="pic.selected = true">
+		<ion-img [src]="pic.pic"></ion-img>
+		<ion-icon slot ="start" size="large" name="checkmark-outline" 
+											*ngIf = "pic.selected" ></ion-icon>
+		</ion-item>
+	</ion-list>
+</ion-content>
+
+<ion-content *ngIf="stage == 3" class="ion-padding">
+	<ion-label>{{ questions[stage] }} </ion-label>
+	<ion-list>
+		<ion-item *ngFor="let fall of describFall"
+							(click) ="resetSelDes()"
+							(click) ="fall.selected = true"
+							(click) ="checkOther()">
+			<ion-label text-wrap>{{ fall.des }} </ion-label>
+		<ion-icon slot ="start" size="large" name="checkmark-outline" 
+											*ngIf = "fall.selected" ></ion-icon>
+		</ion-item>
+		
+	</ion-list>
+	<ion-item *ngIf="other">
+			<ion-label size="large">{{ "Description:" }}</ion-label>
+			<ion-input type="text" [(ngModel)]="description">
+			</ion-input>
+		</ion-item>
+</ion-content>
+
+<ion-content *ngIf ="review">
+	
+</ion-content>
+
+<ion-footer class = "ion-padding">
+	<ion-button expand = "block"
+						
+						(click) = "check()">
+		{{ message }}
+		</ion-button>
+</ion-footer>

@@ -1,0 +1,29 @@
+ion-content ion-toolbar {
+    --background: translucent;
+  }
+
+  message{
+    justify-self: center;
+    text-justify: center;
+    text-align: center;
+  }
+  
+  .qr-container{
+    justify-content: center;
+    justify-self: center;
+    padding: 0;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .id-container{
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+  }
+
+  .test{
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+  }

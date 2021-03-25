@@ -1,0 +1,6 @@
+flights = load 'wholeEnchilada.csv' using PigStorage(',');
+flight_details = FOREACH flights GENERATE $16 AS Origin, $21 AS Cancelled;
+sum = FOREACH flight_details GENERATE *, sum + Cancelled;
+grp_airline = GROUP flight_details by Origin;
+airline_count = foreach grp_airline generate group, COUNT(flight_details);
+store (sum/airline_count) into 'Pig_Output';

@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+{{ "Welcome"}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+    <ion-toolbar class="id-container">
+      <ion-title text-wrap size="large">Did you experince a fall?</ion-title>
+    </ion-toolbar>
+  <ion-button expand = "block" (click)="addEntryPage()">
+		{{ "Yes" }}
+    </ion-button>
+    
+   
+    <ion-toolbar position="bottom" class="footer">
+      
+    <footer class="footer">
+      <div class="id-container">
+      <ion-text class ="id" name="uid">
+        {{"ID: "+ user.UID}}
+      </ion-text>
+    </div>
+    </footer>
+    </ion-toolbar>
+
+</ion-content>

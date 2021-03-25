@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+	<ion-back-button slot="start"></ion-back-button>
+    <ion-title>Add a Participant</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-item>
+    <ion-label size="large">{{ "Name :" }}</ion-label>
+    <ion-input type="text" [(ngModel)]="Name">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label size="large">{{ "Participant ID :"}}</ion-label>
+    <ion-input type="text" [(ngModel)]="QRSCANNED_DATA">
+    </ion-input>
+  </ion-item>
+
+  <ion-button expand = "block" ng-click="addParticipants(QRSCANNED_DATA, Name) ">
+		{{ "Add" }}
+  </ion-button>
+  <ion-button expand = "block" (click)="scan()" >
+    {{ "Scan QR Code" }}
+  </ion-button>
+ 
+
+
+</ion-content>

@@ -1,0 +1,20 @@
+
+Question q2
+===========
+*** q2) check_regression
+Your final loss is: 0.003636
+*** PASS: check_regression
+
+### Question q2: 6/6 ###
+
+Finished at 17:53:31
+
+Provisional grades
+==================
+Question q2: 6/6
+------------------
+Total: 6/6
+
+Your grades are NOT yet registered.  To register your grades, make sure
+to follow your instructor's guidelines to receive credit on your project.
+

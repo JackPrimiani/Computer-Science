@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>QR Code</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="test">
+  <ion-text class="message">
+    <h1> Show this QR Code to your Healthcare provider for quick access to your patient information</h1>
+  </ion-text>
+  <ion-text text-align:center font-weight:bold>
+    {{ "ID: " + user.UID}}
+  </ion-text>
+  <div class="qr-container">
+    <qrcode [qrdata]="patientQR" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+  </div>
+</ion-content>

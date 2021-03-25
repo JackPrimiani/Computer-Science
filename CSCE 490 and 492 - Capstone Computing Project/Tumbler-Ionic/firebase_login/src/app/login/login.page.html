@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="title">Login</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center >
+  <ion-grid >
+    
+    <ion-row text-center>
+      <div text-center>
+      <ion-img style = "width: 300px; height: 300px;"  src ="../../assets/logo.png" class=image></ion-img>
+    </div>
+    </ion-row>
+  
+    <ion-col >
+      <ion-item class="emailInput">
+          <ion-label color="primary" position="floating">email</ion-label>
+          <ion-input type="text" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item class="passInput">
+          <ion-label color="primary" position="floating">password</ion-label>
+          <ion-input type="password" [(ngModel)]="password" required></ion-input>
+        </ion-item>
+      
+      <ion-button (click) =tryLogin(email,password) class="loginButton" expand = "block"  type="submit" >Login</ion-button>
+      <ion-button (click)="signup()" expand = "block" class="signUpButton"> Signup </ion-button>
+      <div text-center>
+      <ion-button (click)="forgotPassword()" shape="round" fill="outline" class="image" > Forgot Password </ion-button>
+    </div>
+      </ion-col>
+    
+  </ion-grid>
+</ion-content>

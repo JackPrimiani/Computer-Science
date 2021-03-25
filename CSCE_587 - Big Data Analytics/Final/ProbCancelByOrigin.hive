@@ -1,0 +1,13 @@
+create table temp_final(tf string);
+
+LOAD DATA INPATH '/user/maria_dev/wholeEnchilada.csv' OVERWRITE INTO TABLE temp_final;
+
+CREATE TABLE originBigTest (origin STRING, cancelled STRING);
+
+insert overwrite table originBigTest
+SELECT
+     regexp_extract(tf, '^(?:([^,]*),?)\{17\}', 1) origin,
+     regexp_extract(tf, '^(?:([^,]*),?)\{22\}', 1) cancelled
+from temp_final;
+
+SELECT origin, sum(cancelled)/count(cancelled) FROM originBigTest where origin != 'NA' AND cancelled != 'NA' GROUP BY origin;

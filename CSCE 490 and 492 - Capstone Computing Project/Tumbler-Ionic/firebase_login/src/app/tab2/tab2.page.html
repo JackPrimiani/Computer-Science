@@ -1,0 +1,74 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Entries
+    </ion-title>
+	<ion-button (click)="theFilter()" slot="end"> Filter </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="filter">
+	<ion-item>
+		<ion-label> From: </ion-label>
+		<ion-datetime [(ngModel)]="minDate"
+								max="{{ latest_date }}"
+								display-format="DDD, MMMM DD YYYY"
+								picker-format="MMMM DD YYYY"
+								
+								placeholder="Pick the date">
+		</ion-datetime>
+	</ion-item>
+	<ion-item>
+		<ion-label> To: </ion-label>
+		<ion-datetime [(ngModel)]="maxDate"
+								max="{{ latest_date }}"
+			      					min="{{ minDate }}"
+								display-format="DDD, MMMM DD YYYY"
+								picker-format="MMMM DD YYYY"
+								
+								placeholder="Pick the date">
+		</ion-datetime>
+	</ion-item>
+	<ion-item>
+		<ion-button expand = "block" (click)="appFilter()"> Apply Filter </ion-button>
+	</ion-item>
+	<ion-item>
+		<ion-button expand = "block" color="danger" (click)="clearFilter()"> Clear Filter </ion-button>
+	</ion-item>
+</ion-content>
+
+
+<ion-content *ngIf="!filtering" [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let fall of entryService.falls"
+						[routerLink]="['/view-entry', fall]"
+						routerDirection="forward">
+		
+       <ion-label>
+        {{ fall.date }}
+      </ion-label>
+	  <ion-label>
+        {{ "Time: " + fall.time + " " +fall.timep }}
+      </ion-label>
+	  
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-content *ngIf="filtering" [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let fall of falls"
+						[routerLink]="['/view-entry', fall]"
+						routerDirection="forward">
+		<ion-icon size="large" name="alert-circle-outline" 
+						*ngIf = "fall.injury" color="danger"></ion-icon>
+       <ion-label>
+        {{ fall.date }}
+      </ion-label>
+	  <ion-label>
+        {{ "Time: " + fall.time + " " +fall.timep }}
+      </ion-label>
+	  
+    </ion-item>
+  </ion-list>
+</ion-content>

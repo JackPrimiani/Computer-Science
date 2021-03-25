@@ -1,0 +1,29 @@
+library("MASS")
+
+data(menarche)
+
+str(menarche)
+
+summary(menarche)
+
+plot(Menarche/Total ~ Age, data=menarche)
+
+glm.out = glm(cbind(Menarche, Total-Menarche) ~ Age, family=binomial(logit), data=menarche)
+
+glm.out = glm(cbind(Menarche, Total-Menarche) ~ Age, family=binomial(logit), data=menarche)
+
+cbind(Menarche, Total-Menarche)
+
+plot(Menarche/Total ~ Age, data=menarche)
+
+plot(menarche$Menarche/menarche$Total ~ menarche$Age)
+
+cbind(menarche$Menarche, menarche$Total-menarche$Menarche)
+
+glm.out = glm(cbind(Menarche, Total-Menarche) ~ Age, family=binomial(logit), data=menarche)
+
+plot(Menarche/Total ~ Age, data=menarche)
+lines(menarche$Age, glm.out$fitted, type="l", col="red")
+title(main="Menarche Data with Fitted Logistic Regression Line")
+
+summary(glm.out)

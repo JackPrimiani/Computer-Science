@@ -1,0 +1,7 @@
+{
+  "name": "tumbler",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

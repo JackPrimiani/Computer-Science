@@ -1,0 +1,181 @@
+<div>
+        <h3>
+            Total score (19 / 25)
+        </h3>
+    
+        <div class="test">
+          <section>
+          <div class="shortform">
+            Question 1 (2/2) <span class="correct"/>
+          </div>
+        <div class="longform">
+          <pre>PASS: test_cases\q1\1-ObsProb.test
+	PASS</pre>
+        </div>
+        </section>
+      </div>
+      
+        <div class="test">
+          <section>
+          <div class="shortform">
+            Question 2 (3/3) <span class="correct"/>
+          </div>
+        <div class="longform">
+          <pre>q2) Exact inference stationary pacman observe test: 0 inference errors.
+PASS: test_cases\q2\1-ExactUpdate.test
+q2) Exact inference stationary pacman observe test: 0 inference errors.
+PASS: test_cases\q2\2-ExactUpdate.test
+q2) Exact inference stationary pacman observe test: 0 inference errors.
+PASS: test_cases\q2\3-ExactUpdate.test
+q2) Exact inference stationary pacman observe test: 0 inference errors.
+PASS: test_cases\q2\4-ExactUpdate.test</pre>
+        </div>
+        </section>
+      </div>
+      
+        <div class="test">
+          <section>
+          <div class="shortform">
+            Question 3 (3/3) <span class="correct"/>
+          </div>
+        <div class="longform">
+          <pre>q3) Exact inference elapseTime test: 0 inference errors.
+PASS: test_cases\q3\1-ExactPredict.test
+q3) Exact inference elapseTime test: 0 inference errors.
+PASS: test_cases\q3\2-ExactPredict.test
+q3) Exact inference elapseTime test: 0 inference errors.
+PASS: test_cases\q3\3-ExactPredict.test
+q3) Exact inference elapseTime test: 0 inference errors.
+PASS: test_cases\q3\4-ExactPredict.test</pre>
+        </div>
+        </section>
+      </div>
+      
+        <div class="test">
+          <section>
+          <div class="shortform">
+            Question 4 (2/2) <span class="correct"/>
+          </div>
+        <div class="longform">
+          <pre>q4) Exact inference full test: 0 inference errors.
+PASS: test_cases\q4\1-ExactFull.test
+q4) Exact inference full test: 0 inference errors.
+PASS: test_cases\q4\2-ExactFull.test
+smallHunt) Games won on q4 with score above 700: 10/10
+PASS: test_cases\q4\3-gameScoreTest.test</pre>
+        </div>
+        </section>
+      </div>
+      
+        <div class="test">
+          <section>
+          <div class="shortform">
+            Question 5 (2/2) <span class="correct"/>
+          </div>
+        <div class="longform">
+          <pre>q5) Particle filter initialization test: 0 inference errors.
+PASS: test_cases\q5\1-ParticleInit.test</pre>
+        </div>
+        </section>
+      </div>
+      
+        <div class="test">
+          <section>
+          <div class="shortform">
+            Question 6 (3/3) <span class="correct"/>
+          </div>
+        <div class="longform">
+          <pre>q6) Particle filter observe test: 0 inference errors.
+PASS: test_cases\q6\1-ParticleUpdate.test
+q6) Particle filter observe test: 0 inference errors.
+PASS: test_cases\q6\2-ParticleUpdate.test
+q6) Particle filter observe test: 0 inference errors.
+PASS: test_cases\q6\3-ParticleUpdate.test
+q6) Particle filter observe test: 0 inference errors.
+PASS: test_cases\q6\4-ParticleUpdate.test
+q6) successfully handled all weights = 0
+PASS: test_cases\q6\5-ParticleUpdate.test
+oneHunt) Games won on q6 with score above 100: 10/10
+PASS: test_cases\q6\6-ParticleUpdate.test</pre>
+        </div>
+        </section>
+      </div>
+      
+        <div class="test">
+          <section>
+          <div class="shortform">
+            Question 7 (0/3) <span class="incorrect"/>
+          </div>
+        <div class="longform">
+          <pre>FAIL: Exception raised: name 'observation' is not defined
+
+Traceback (most recent call last):
+  File "C:\Users\JackPrimiani\CompSci\CSCE_580\Assignment5\ghostbusters\grading.py", line 78, in grade
+    util.TimeoutFunction(getattr(gradingModule, q),1800)(self) # Call the question's function
+  File "C:\Users\JackPrimiani\CompSci\CSCE_580\Assignment5\ghostbusters\util.py", line 639, in __call__
+    result = self.function(*args, **keyArgs)
+  File "autograder.py", line 309, in &lt;lambda&gt;
+    return lambda grades: question.execute(grades)
+  File "C:\Users\JackPrimiani\CompSci\CSCE_580\Assignment5\ghostbusters\testClasses.py", line 80, in execute
+    if not f(grades):
+  File "autograder.py", line 304, in &lt;lambda&gt;
+    return lambda grades: testCase.execute(grades, moduleDict, solutionDict)
+  File "tracking_fa18TestClasses.py", line 179, in execute
+    run(self.layout_str, pac, ghosts, disp, maxMoves=self.maxMoves)
+  File "tracking_fa18TestClasses.py", line 272, in run
+    games = busters.runGames(lay, pac, ghosts, disp, nGames, maxMoves)
+  File "C:\Users\JackPrimiani\CompSci\CSCE_580\Assignment5\ghostbusters\busters.py", line 542, in runGames
+    game.run()
+  File "C:\Users\JackPrimiani\CompSci\CSCE_580\Assignment5\ghostbusters\game.py", line 686, in run
+    action = agent.getAction(observation)
+  File "tracking_fa18TestClasses.py", line 434, in getAction
+    if not self.firstMove: inf.elapseTime(gameState)
+  File "inference.py", line 410, in elapseTime
+    noisyDistance = observation
+NameError: name 'observation' is not defined
+</pre>
+        </div>
+        </section>
+      </div>
+      
+        <div class="test">
+          <section>
+          <div class="shortform">
+            Question 8 (1/1) <span class="correct"/>
+          </div>
+        <div class="longform">
+          <pre>q8) Joint particle filter initialization test: 0 inference errors.
+PASS: test_cases\q8\1-JointParticleInit.test</pre>
+        </div>
+        </section>
+      </div>
+      
+        <div class="test">
+          <section>
+          <div class="shortform">
+            Question 9 (3/3) <span class="correct"/>
+          </div>
+        <div class="longform">
+          <pre>q9) Joint particle filter observeUpdate test: 0 inference errors.
+PASS: test_cases\q9\1-JointParticleUpdate.test
+q9) Joint particle filter observeUpdate test: 0 inference errors.
+PASS: test_cases\q9\2-JointParticleUpdate.test
+q9) successfully handled all weights = 0
+PASS: test_cases\q9\3-JointParticleUpdate.test
+q9) Joint particle filter observeUpdate test: 0 inference errors.
+PASS: test_cases\q9\4-JointParticleUpdate.test</pre>
+        </div>
+        </section>
+      </div>
+      
+        <div class="test">
+          <section>
+          <div class="shortform">
+            Question q10 (0/3) <span class="incorrect"/>
+          </div>
+        <div class="longform">
+          <pre>FAIL: Terminated with a string exception.</pre>
+        </div>
+        </section>
+      </div>
+      </div>

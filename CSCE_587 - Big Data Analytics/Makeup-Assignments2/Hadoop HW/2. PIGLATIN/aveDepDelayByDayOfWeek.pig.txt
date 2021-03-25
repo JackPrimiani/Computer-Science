@@ -1,0 +1,5 @@
+flights = load '2008.csv' using PigStorage(',');
+flight_details = FOREACH flights GENERATE $3 as DayOfWeek, (int)$15 AS DepDelay;
+grp_airline = GROUP flight_details by DayOfWeek;
+aveDepDelay= foreach grp_airline generate group, AVG(flight_details.DepDelay);
+store aveDepDelay into 'aveDepDelayByDayOfWeekPigResults';

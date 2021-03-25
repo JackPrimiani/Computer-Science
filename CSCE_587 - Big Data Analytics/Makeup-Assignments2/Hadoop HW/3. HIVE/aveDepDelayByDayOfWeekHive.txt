@@ -1,0 +1,17 @@
+create table temp_flights(tf string);
+
+LOAD DATA INPATH '/user/maria_dev/2008.csv' OVERWRITE INTO TABLE temp_flights;
+
+select * from temp_flights limit 10;
+
+CREATE TABLE flights (DayOfWeek STRING, DepDelay STRING);
+
+insert overwrite table flights
+SELECT 
+     regexp_extract(tf, '^(?:([^,]*),?){4}', 1) DayOfWeek,
+     regexp_extract(tf, '^(?:([^,]*),?){16}', 1) DepDelay
+from temp_flights;
+
+select * from flights limit 10;
+
+SELECT DayOfWeek, count(DepDelay), sum(DepDelay), sum(DepDelay)/count(DepDelay) FROM flights where DepDelay != 'NA' GROUP BY DayOfWeek;

@@ -1,0 +1,20 @@
+
+Question q3
+===========
+*** q3) check_digit_classification
+Your final test set accuracy is: 97.360000%
+*** PASS: check_digit_classification
+
+### Question q3: 6/6 ###
+
+Finished at 18:36:37
+
+Provisional grades
+==================
+Question q3: 6/6
+------------------
+Total: 6/6
+
+Your grades are NOT yet registered.  To register your grades, make sure
+to follow your instructor's guidelines to receive credit on your project.
+

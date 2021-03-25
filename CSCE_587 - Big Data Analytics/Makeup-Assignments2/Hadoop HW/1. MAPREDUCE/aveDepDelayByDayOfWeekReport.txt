@@ -1,0 +1,5 @@
+Hypothesis: Some days of the week exhibit larger departure delays.
+
+With my aveDepDelayByDayOfWeekMapResults, I can deduce that the results do indeed confirm the hypothesis that some days of the week do indeed exhibit larger departure delays than others. With the results it shows that the mode average departure delay by day is 8 on days 2, 3, and 6 (Monday, Tuesday, and Friday). The average delay across the entire week would be approx. 9 which is also the value of day 4 (Wednesday) which isn't significantly larger than the mode delay time. Days 1, 5, and 7 (Sunday, Thursday, and Saturday) show a significantly greater delay in departure times with scores of 10, 12, and 11. Thus supporting the hypothesis that some days of the week do exhibit larger departure delays.
+
+Another way I could have tested this using R studio: casting the days to a type (1-7) and then collecting the average of the days that way based on individual types. This way is just as simple, doing the same thing just through different methods and software.
